@@ -1,0 +1,68 @@
+config:
+  credentials: []
+  project_repos:
+    github.com/EOSC-synergy/sqaaas-tooling:
+      branch: main
+      repo: https://github.com/EOSC-synergy/sqaaas-tooling
+    github.com/swiss-seismological-service/etas:
+      branch: dtgeo/v1.0.0
+      repo: https://github.com/swiss-seismological-service/etas
+environment:
+  JPL_DOCKERFORCEBUILD: enabled
+  JPL_KEEPGOING: enabled
+sqa_criteria:
+  QC.Acc:
+    repos:
+      github.com/swiss-seismological-service/etas git:
+        commands:
+        - /usr/bin/env sh .sqa/script.freaky-mauve-starfish.sh
+        container: qc.acc_skanky-malachite-havanese
+  QC.Doc:
+    repos:
+      github.com/swiss-seismological-service/etas find_doc_files.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.geeky-olivine-hummingbird.sh
+        container: qc.doc_bumpy-cinnabar-barnacle
+      github.com/swiss-seismological-service/etas git:
+        commands:
+        - /usr/bin/env sh .sqa/script.grumpy-corn-bandicoot.sh
+        container: qc.doc_beady-cyan-bear
+      github.com/swiss-seismological-service/etas markdownlint:
+        commands:
+        - /usr/bin/env sh .sqa/script.chewy-sepia-dragon.sh
+        container: qc.doc_leaky-scarlet-dachshund
+  QC.Lic:
+    repos:
+      github.com/swiss-seismological-service/etas licensee:
+        commands:
+        - /usr/bin/env sh .sqa/script.chewy-amber-snake.sh
+        container: qc.lic_scummy-red-centipede
+  QC.Sec:
+    repos:
+      github.com/swiss-seismological-service/etas bandit:
+        commands:
+        - /usr/bin/env sh .sqa/script.cozy-viridian-pinscher.sh
+        container: qc.sec_squeaky-buff-fossa
+  QC.Sty:
+    repos:
+      github.com/swiss-seismological-service/etas flake8:
+        commands:
+        - /usr/bin/env sh .sqa/script.sloppy-amaranth-spider.sh
+        container: qc.sty_muzzy-tomato-grouse
+      github.com/swiss-seismological-service/etas jsonlint:
+        commands:
+        - /usr/bin/env sh .sqa/script.skanky-white-salamander.sh
+        container: qc.sty_hilly-asparagus-warthog
+  QC.Uni:
+    repos:
+      github.com/swiss-seismological-service/etas pytest:
+        commands:
+        - /usr/bin/env sh .sqa/script.greasy-platinum-iguana.sh
+        container: qc.uni_craggy-beige-lobster
+  QC.Ver:
+    repos:
+      github.com/swiss-seismological-service/etas get_git_tags.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.flimsy-peach-cuttlefish.sh
+        container: qc.ver_stealthy-magnolia-earwig
+timeout: 5400
