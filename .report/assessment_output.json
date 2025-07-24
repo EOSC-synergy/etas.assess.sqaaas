@@ -1,0 +1,1718 @@
+{
+    "meta": {
+        "version": "3.5.0",
+        "report_json_url": "https://raw.githubusercontent.com/eosc-synergy/etas.assess.sqaaas/dtgeo/v1.0.0/.report/assessment_output.json",
+        "report_permalink": "https://sqaaas.eosc-synergy.eu/full-assessment/report/https://raw.githubusercontent.com/eosc-synergy/etas.assess.sqaaas/dtgeo/v1.0.0/.report/assessment_output.json",
+        "timestamp": 1753354888.2286873
+    },
+    "repository": [
+        {
+            "url": "https://github.com/swiss-seismological-service/etas",
+            "name": "swiss-seismological-service/etas",
+            "tag": "dtgeo/v1.0.0",
+            "commit_id": "1cf4dd6af02b0b64baea45668fe418f196a3defc",
+            "is_main_repo": true,
+            "avatar_url": "https://avatars.githubusercontent.com/u/50695471?v=4",
+            "description": null,
+            "languages": null,
+            "topics": null,
+            "stargazers_count": null,
+            "watchers_count": null,
+            "contributors_count": null,
+            "forks_count": null,
+            "badge_status": "no_badge"
+        }
+    ],
+    "report": {
+        "QC.Acc": {
+            "valid": true,
+            "subcriteria": {
+                "QC.Acc01": {
+                    "description": "Is the source code managed with a Version Control System?",
+                    "requirement_level": "MUST",
+                    "hint": "The source code shall be managed with Git and remain publicly available for this criterion to be successful. Please check <a href=\"https://git-scm.com/book/es/v2\" target=\"_blank\">Pro Git</a> docs about how to get started using Git tool. Guidelines provided by the most popular social coding platforms (<a href=\"https://docs.github.com/get-started\" target=\"_blank\">GitHub</a>, <a href=\"https://about.gitlab.com/get-started/\" target=\"_blank\">GitLab</a>) are also a good starting point",
+                    "evidence": [
+                        {
+                            "valid": true,
+                            "message": "Source code uses Git for version control",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-boolean",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "git",
+                                "lang": "scm",
+                                "version": "2.34.1",
+                                "docker": {
+                                    "image": "bitnami/git:2.34.1",
+                                    "reviewed": "2021-12-30"
+                                },
+                                "ci": {
+                                    "name": "QC.Acc github.com/swiss-seismological-service/etas git",
+                                    "status": "SUCCESS",
+                                    "stdout_command": [
+                                        "git rev-parse --is-inside-work-tree "
+                                    ],
+                                    "stdout_text": "true",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/etas.assess.sqaaas/job/dtgeo%25252Fv1.0.0/1/execution/node/34/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/etas.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": {}
+                        }
+                    ],
+                    "valid": true
+                }
+            },
+            "coverage": {
+                "percentage": 100,
+                "total_subcriteria": 1,
+                "success_subcriteria": 1
+            }
+        },
+        "QC.Doc": {
+            "valid": false,
+            "subcriteria": {
+                "QC.Doc06.1": {
+                    "description": "Is the software scope outlined in the code repository?",
+                    "requirement_level": "MUST",
+                    "hint": "A README file presents your software to the audience interested in your software project. Several online sites simplify the task of creating the README file, such as <a href=\"https://www.makeareadme.com/\" target=\"_blank\">Make a README</a> or <a href=\"https://readme.so/\" target=\"_blank\">readme.so</a> sites. Be sure to add it to the code repository's root path",
+                    "evidence": [
+                        {
+                            "valid": true,
+                            "message": "A README file is present in the code repository",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-find_doc_files",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "find_doc_files.py",
+                                "lang": "Contribution-enabling Files",
+                                "version": "latest",
+                                "docker": {
+                                    "dockerfile": "QC.Doc/Dockerfile",
+                                    "reviewed": "2022-01-26"
+                                },
+                                "ci": {
+                                    "name": "QC.Doc github.com/swiss-seismological-service/etas find_doc_files.py",
+                                    "status": "SUCCESS",
+                                    "stdout_command": [
+                                        "find_doc_files.py --file_type all"
+                                    ],
+                                    "stdout_text": "{\"README\": [{\"file_name\": \"README.md\", \"size\": 3336}], \"CODE_OF_CONDUCT\": [], \"CONTRIBUTING\": []}",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/etas.assess.sqaaas/job/dtgeo%25252Fv1.0.0/1/execution/node/43/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/etas.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": {
+                                "README": [
+                                    {
+                                        "file_name": "README.md",
+                                        "size": 3336
+                                    }
+                                ],
+                                "CODE_OF_CONDUCT": [],
+                                "CONTRIBUTING": []
+                            }
+                        }
+                    ],
+                    "valid": true
+                },
+                "QC.Doc06.3": {
+                    "description": "Does the project establish a code of conduct for its participants?",
+                    "requirement_level": "MUST",
+                    "hint": "A CODE_OF_CONDUCT file sets the path for a constructive, respectful and positive atmosphere among all the contributors in your software project. Of course you can define your own, but in case you want to rely on external and widely-adopted code of conducts check out some of the most popular ones: <a href=\"https://contributor-covenant.org/\" target=\"_blank\">Contributor Covenant</a> or <a href=\"https://web.archive.org/web/20200330154000/http://citizencodeofconduct.org/\" target=\"_blank\">Citizen Code of Conduct</a>",
+                    "evidence": [
+                        {
+                            "valid": false,
+                            "message": "A CODE_OF_CONDUCT file is not present in the code repository",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-find_doc_files",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "find_doc_files.py",
+                                "lang": "Contribution-enabling Files",
+                                "version": "latest",
+                                "docker": {
+                                    "dockerfile": "QC.Doc/Dockerfile",
+                                    "reviewed": "2022-01-26"
+                                },
+                                "ci": {
+                                    "name": "QC.Doc github.com/swiss-seismological-service/etas find_doc_files.py",
+                                    "status": "SUCCESS",
+                                    "stdout_command": [
+                                        "find_doc_files.py --file_type all"
+                                    ],
+                                    "stdout_text": "{\"README\": [{\"file_name\": \"README.md\", \"size\": 3336}], \"CODE_OF_CONDUCT\": [], \"CONTRIBUTING\": []}",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/etas.assess.sqaaas/job/dtgeo%25252Fv1.0.0/1/execution/node/43/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/etas.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": {
+                                "README": [
+                                    {
+                                        "file_name": "README.md",
+                                        "size": 3336
+                                    }
+                                ],
+                                "CODE_OF_CONDUCT": [],
+                                "CONTRIBUTING": []
+                            }
+                        }
+                    ],
+                    "valid": false,
+                    "required_for_next_level_badge": true
+                },
+                "QC.Doc06.2": {
+                    "description": "Is there a clear path or guidelines on how to contribute to the code?",
+                    "requirement_level": "MUST",
+                    "hint": "A CONTRIBUTING file shall be present in the root path of the code repository describing the expected workflow to follow when adding contributions. Please check <a href=\"https://mozillascience.github.io/working-open-workshop/contributing/\" target=\"_blank\">Mozilla's guidelines</a> and <a href=\"https://github.com/github/docs/blob/main/CONTRIBUTING.md\" target=\"_blank\">GitHub's CONTRIBUTING.md example</a> to get inspired on how to write a good CONTRIBUTING file",
+                    "evidence": [
+                        {
+                            "valid": false,
+                            "message": "A CONTRIBUTING file is not present in the code repository",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-find_doc_files",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "find_doc_files.py",
+                                "lang": "Contribution-enabling Files",
+                                "version": "latest",
+                                "docker": {
+                                    "dockerfile": "QC.Doc/Dockerfile",
+                                    "reviewed": "2022-01-26"
+                                },
+                                "ci": {
+                                    "name": "QC.Doc github.com/swiss-seismological-service/etas find_doc_files.py",
+                                    "status": "SUCCESS",
+                                    "stdout_command": [
+                                        "find_doc_files.py --file_type all"
+                                    ],
+                                    "stdout_text": "{\"README\": [{\"file_name\": \"README.md\", \"size\": 3336}], \"CODE_OF_CONDUCT\": [], \"CONTRIBUTING\": []}",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/etas.assess.sqaaas/job/dtgeo%25252Fv1.0.0/1/execution/node/43/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/etas.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": {
+                                "README": [
+                                    {
+                                        "file_name": "README.md",
+                                        "size": 3336
+                                    }
+                                ],
+                                "CODE_OF_CONDUCT": [],
+                                "CONTRIBUTING": []
+                            }
+                        }
+                    ],
+                    "valid": false,
+                    "required_for_next_level_badge": true
+                },
+                "QC.Doc01.1": {
+                    "description": "Are docs managed in the same repository as code?",
+                    "requirement_level": "MAY",
+                    "hint": "This subcriterion will succeed if the documentation files exist on the same repository as the source code, e.g. under a <code>docs/</code> folder",
+                    "evidence": [
+                        {
+                            "valid": true,
+                            "message": "Documentation resides in the same repository as code",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-boolean",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "git",
+                                "lang": null,
+                                "version": null,
+                                "docker": null,
+                                "ci": {
+                                    "name": "QC.Doc github.com/swiss-seismological-service/etas git",
+                                    "status": "SUCCESS",
+                                    "stdout_command": [
+                                        "git rev-parse --is-inside-work-tree "
+                                    ],
+                                    "stdout_text": "true",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/etas.assess.sqaaas/job/dtgeo%25252Fv1.0.0/1/execution/node/52/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/etas.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": {}
+                        }
+                    ],
+                    "valid": true
+                },
+                "QC.Doc02.X": {
+                    "description": "Are docs following a style for the Markdown markup language?",
+                    "requirement_level": "MAY",
+                    "hint": "When using a docs-as-code approach, the style of the markup language is being checked. SQAaaS relies on <a href=\"https://github.com/markdownlint/markdownlint/\" target=\"_blank\">markdownlint</a> for Markdown files and <a href=\"https://github.com/twolfson/restructuredtext-lint/\" target=\"_blank\">restructuredtext-lint</a> for reStructuredText",
+                    "evidence": [
+                        {
+                            "valid": false,
+                            "message": "Docs are not fully compliant with markdownlint standard",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-markdownlint",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "markdownlint",
+                                "lang": "Markdown",
+                                "version": "0.11.0",
+                                "docker": {
+                                    "dockerfile": "QC.Doc/markdownlint/Dockerfile",
+                                    "reviewed": "1970-01-01"
+                                },
+                                "ci": {
+                                    "name": "QC.Doc github.com/swiss-seismological-service/etas markdownlint",
+                                    "status": "FAILED",
+                                    "stdout_command": [
+                                        "mdl --json  ."
+                                    ],
+                                    "stdout_text": "[{\"filename\":\"./README.md\",\"line\":5,\"rule\":\"MD001\",\"aliases\":[\"header-increment\"],\"description\":\"Header levels should only increment by one level at a time\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md001---header-levels-should-only-increment-by-one-level-at-a-time\"},{\"filename\":\"./README.md\",\"line\":33,\"rule\":\"MD007\",\"aliases\":[\"ul-indent\"],\"description\":\"Unordered list indentation\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md007---unordered-list-indentation\"},{\"filename\":\"./README.md\",\"line\":44,\"rule\":\"MD009\",\"aliases\":[\"no-trailing-spaces\"],\"description\":\"Trailing spaces\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md009---trailing-spaces\"},{\"filename\":\"./README.md\",\"line\":7,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":11,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":13,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":18,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":32,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":33,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":34,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":35,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":37,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":38,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":39,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":44,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":47,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":5,\"rule\":\"MD026\",\"aliases\":[\"no-trailing-punctuation\"],\"description\":\"Trailing punctuation in header\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md026---trailing-punctuation-in-header\"},{\"filename\":\"./README.md\",\"line\":11,\"rule\":\"MD026\",\"aliases\":[\"no-trailing-punctuation\"],\"description\":\"Trailing punctuation in header\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md026---trailing-punctuation-in-header\"},{\"filename\":\"./README.md\",\"line\":30,\"rule\":\"MD026\",\"aliases\":[\"no-trailing-punctuation\"],\"description\":\"Trailing punctuation in header\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md026---trailing-punctuation-in-header\"},{\"filename\":\"./README.md\",\"line\":32,\"rule\":\"MD030\",\"aliases\":[\"list-marker-space\"],\"description\":\"Spaces after list markers\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md030---spaces-after-list-markers\"},{\"filename\":\"./README.md\",\"line\":40,\"rule\":\"MD030\",\"aliases\":[\"list-marker-space\"],\"description\":\"Spaces after list markers\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md030---spaces-after-list-markers\"},{\"filename\":\"./README.md\",\"line\":42,\"rule\":\"MD030\",\"aliases\":[\"list-marker-space\"],\"description\":\"Spaces after list markers\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md030---spaces-after-list-markers\"},{\"filename\":\"./README.md\",\"line\":49,\"rule\":\"MD030\",\"aliases\":[\"list-marker-space\"],\"description\":\"Spaces after list markers\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md030---spaces-after-list-markers\"},{\"filename\":\"./README.md\",\"line\":51,\"rule\":\"MD030\",\"aliases\":[\"list-marker-space\"],\"description\":\"Spaces after list markers\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md030---spaces-after-list-markers\"},{\"filename\":\"./README.md\",\"line\":33,\"rule\":\"MD030\",\"aliases\":[\"list-marker-space\"],\"description\":\"Spaces after list markers\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md030---spaces-after-list-markers\"},{\"filename\":\"./README.md\",\"line\":34,\"rule\":\"MD030\",\"aliases\":[\"list-marker-space\"],\"description\":\"Spaces after list markers\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md030---spaces-after-list-markers\"},{\"filename\":\"./README.md\",\"line\":35,\"rule\":\"MD030\",\"aliases\":[\"list-marker-space\"],\"description\":\"Spaces after list markers\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md030---spaces-after-list-markers\"},{\"filename\":\"./README.md\",\"line\":36,\"rule\":\"MD030\",\"aliases\":[\"list-marker-space\"],\"description\":\"Spaces after list markers\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md030---spaces-after-list-markers\"},{\"filename\":\"./README.md\",\"line\":37,\"rule\":\"MD030\",\"aliases\":[\"list-marker-space\"],\"description\":\"Spaces after list markers\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md030---spaces-after-list-markers\"},{\"filename\":\"./README.md\",\"line\":38,\"rule\":\"MD030\",\"aliases\":[\"list-marker-space\"],\"description\":\"Spaces after list markers\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md030---spaces-after-list-markers\"},{\"filename\":\"./README.md\",\"line\":39,\"rule\":\"MD030\",\"aliases\":[\"list-marker-space\"],\"description\":\"Spaces after list markers\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md030---spaces-after-list-markers\"},{\"filename\":\"./README.md\",\"line\":41,\"rule\":\"MD030\",\"aliases\":[\"list-marker-space\"],\"description\":\"Spaces after list markers\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md030---spaces-after-list-markers\"},{\"filename\":\"./README.md\",\"line\":43,\"rule\":\"MD030\",\"aliases\":[\"list-marker-space\"],\"description\":\"Spaces after list markers\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md030---spaces-after-list-markers\"},{\"filename\":\"./README.md\",\"line\":44,\"rule\":\"MD030\",\"aliases\":[\"list-marker-space\"],\"description\":\"Spaces after list markers\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md030---spaces-after-list-markers\"},{\"filename\":\"./README.md\",\"line\":45,\"rule\":\"MD030\",\"aliases\":[\"list-marker-space\"],\"description\":\"Spaces after list markers\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md030---spaces-after-list-markers\"},{\"filename\":\"./README.md\",\"line\":46,\"rule\":\"MD030\",\"aliases\":[\"list-marker-space\"],\"description\":\"Spaces after list markers\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md030---spaces-after-list-markers\"},{\"filename\":\"./README.md\",\"line\":47,\"rule\":\"MD030\",\"aliases\":[\"list-marker-space\"],\"description\":\"Spaces after list markers\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md030---spaces-after-list-markers\"},{\"filename\":\"./README.md\",\"line\":48,\"rule\":\"MD030\",\"aliases\":[\"list-marker-space\"],\"description\":\"Spaces after list markers\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md030---spaces-after-list-markers\"},{\"filename\":\"./README.md\",\"line\":50,\"rule\":\"MD030\",\"aliases\":[\"list-marker-space\"],\"description\":\"Spaces after list markers\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md030---spaces-after-list-markers\"},{\"filename\":\"./README.md\",\"line\":52,\"rule\":\"MD030\",\"aliases\":[\"list-marker-space\"],\"description\":\"Spaces after list markers\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md030---spaces-after-list-markers\"},{\"filename\":\"./README.md\",\"line\":7,\"rule\":\"MD033\",\"aliases\":[\"no-inline-html\"],\"description\":\"Inline HTML\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md033---inline-html\"},{\"filename\":\"./README.md\",\"line\":7,\"rule\":\"MD033\",\"aliases\":[\"no-inline-html\"],\"description\":\"Inline HTML\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md033---inline-html\"},{\"filename\":\"./README.md\",\"line\":8,\"rule\":\"MD033\",\"aliases\":[\"no-inline-html\"],\"description\":\"Inline HTML\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md033---inline-html\"},{\"filename\":\"./README.md\",\"line\":9,\"rule\":\"MD033\",\"aliases\":[\"no-inline-html\"],\"description\":\"Inline HTML\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md033---inline-html\"},{\"filename\":\"./README.md\",\"line\":13,\"rule\":\"MD033\",\"aliases\":[\"no-inline-html\"],\"description\":\"Inline HTML\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md033---inline-html\"},{\"filename\":\"./README.md\",\"line\":13,\"rule\":\"MD033\",\"aliases\":[\"no-inline-html\"],\"description\":\"Inline HTML\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md033---inline-html\"},{\"filename\":\"./README.md\",\"line\":14,\"rule\":\"MD033\",\"aliases\":[\"no-inline-html\"],\"description\":\"Inline HTML\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md033---inline-html\"},{\"filename\":\"./README.md\",\"line\":15,\"rule\":\"MD033\",\"aliases\":[\"no-inline-html\"],\"description\":\"Inline HTML\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md033---inline-html\"},{\"filename\":\"./README.md\",\"line\":16,\"rule\":\"MD033\",\"aliases\":[\"no-inline-html\"],\"description\":\"Inline HTML\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md033---inline-html\"},{\"filename\":\"./README.md\",\"line\":18,\"rule\":\"MD033\",\"aliases\":[\"no-inline-html\"],\"description\":\"Inline HTML\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md033---inline-html\"},{\"filename\":\"./README.md\",\"line\":19,\"rule\":\"MD033\",\"aliases\":[\"no-inline-html\"],\"description\":\"Inline HTML\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md033---inline-html\"},{\"filename\":\"./README.md\",\"line\":20,\"rule\":\"MD033\",\"aliases\":[\"no-inline-html\"],\"description\":\"Inline HTML\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md033---inline-html\"},{\"filename\":\"./README.md\",\"line\":22,\"rule\":\"MD033\",\"aliases\":[\"no-inline-html\"],\"description\":\"Inline HTML\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md033---inline-html\"},{\"filename\":\"./README.md\",\"line\":23,\"rule\":\"MD033\",\"aliases\":[\"no-inline-html\"],\"description\":\"Inline HTML\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md033---inline-html\"},{\"filename\":\"./README.md\",\"line\":26,\"rule\":\"MD033\",\"aliases\":[\"no-inline-html\"],\"description\":\"Inline HTML\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md033---inline-html\"},{\"filename\":\"./README.md\",\"line\":27,\"rule\":\"MD033\",\"aliases\":[\"no-inline-html\"],\"description\":\"Inline HTML\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md033---inline-html\"},{\"filename\":\"./README.md\",\"line\":28,\"rule\":\"MD033\",\"aliases\":[\"no-inline-html\"],\"description\":\"Inline HTML\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md033---inline-html\"},{\"filename\":\"./README.md\",\"line\":32,\"rule\":\"MD033\",\"aliases\":[\"no-inline-html\"],\"description\":\"Inline HTML\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md033---inline-html\"},{\"filename\":\"./README.md\",\"line\":33,\"rule\":\"MD033\",\"aliases\":[\"no-inline-html\"],\"description\":\"Inline HTML\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md033---inline-html\"},{\"filename\":\"./README.md\",\"line\":34,\"rule\":\"MD033\",\"aliases\":[\"no-inline-html\"],\"description\":\"Inline HTML\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md033---inline-html\"},{\"filename\":\"./README.md\",\"line\":35,\"rule\":\"MD033\",\"aliases\":[\"no-inline-html\"],\"description\":\"Inline HTML\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md033---inline-html\"},{\"filename\":\"./README.md\",\"line\":36,\"rule\":\"MD033\",\"aliases\":[\"no-inline-html\"],\"description\":\"Inline HTML\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md033---inline-html\"},{\"filename\":\"./README.md\",\"line\":37,\"rule\":\"MD033\",\"aliases\":[\"no-inline-html\"],\"description\":\"Inline HTML\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md033---inline-html\"},{\"filename\":\"./README.md\",\"line\":37,\"rule\":\"MD033\",\"aliases\":[\"no-inline-html\"],\"description\":\"Inline HTML\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md033---inline-html\"},{\"filename\":\"./README.md\",\"line\":38,\"rule\":\"MD033\",\"aliases\":[\"no-inline-html\"],\"description\":\"Inline HTML\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md033---inline-html\"},{\"filename\":\"./README.md\",\"line\":38,\"rule\":\"MD033\",\"aliases\":[\"no-inline-html\"],\"description\":\"Inline HTML\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md033---inline-html\"},{\"filename\":\"./README.md\",\"line\":38,\"rule\":\"MD033\",\"aliases\":[\"no-inline-html\"],\"description\":\"Inline HTML\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md033---inline-html\"},{\"filename\":\"./README.md\",\"line\":39,\"rule\":\"MD033\",\"aliases\":[\"no-inline-html\"],\"description\":\"Inline HTML\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md033---inline-html\"},{\"filename\":\"./README.md\",\"line\":40,\"rule\":\"MD033\",\"aliases\":[\"no-inline-html\"],\"description\":\"Inline HTML\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md033---inline-html\"},{\"filename\":\"./README.md\",\"line\":40,\"rule\":\"MD033\",\"aliases\":[\"no-inline-html\"],\"description\":\"Inline HTML\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md033---inline-html\"},{\"filename\":\"./README.md\",\"line\":42,\"rule\":\"MD033\",\"aliases\":[\"no-inline-html\"],\"description\":\"Inline HTML\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md033---inline-html\"},{\"filename\":\"./README.md\",\"line\":43,\"rule\":\"MD033\",\"aliases\":[\"no-inline-html\"],\"description\":\"Inline HTML\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md033---inline-html\"},{\"filename\":\"./README.md\",\"line\":44,\"rule\":\"MD033\",\"aliases\":[\"no-inline-html\"],\"description\":\"Inline HTML\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md033---inline-html\"},{\"filename\":\"./README.md\",\"line\":44,\"rule\":\"MD033\",\"aliases\":[\"no-inline-html\"],\"description\":\"Inline HTML\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md033---inline-html\"},{\"filename\":\"./README.md\",\"line\":45,\"rule\":\"MD033\",\"aliases\":[\"no-inline-html\"],\"description\":\"Inline HTML\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md033---inline-html\"},{\"filename\":\"./README.md\",\"line\":46,\"rule\":\"MD033\",\"aliases\":[\"no-inline-html\"],\"description\":\"Inline HTML\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md033---inline-html\"},{\"filename\":\"./README.md\",\"line\":46,\"rule\":\"MD033\",\"aliases\":[\"no-inline-html\"],\"description\":\"Inline HTML\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md033---inline-html\"},{\"filename\":\"./README.md\",\"line\":47,\"rule\":\"MD033\",\"aliases\":[\"no-inline-html\"],\"description\":\"Inline HTML\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md033---inline-html\"},{\"filename\":\"./README.md\",\"line\":47,\"rule\":\"MD033\",\"aliases\":[\"no-inline-html\"],\"description\":\"Inline HTML\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md033---inline-html\"},{\"filename\":\"./README.md\",\"line\":48,\"rule\":\"MD033\",\"aliases\":[\"no-inline-html\"],\"description\":\"Inline HTML\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md033---inline-html\"},{\"filename\":\"./README.md\",\"line\":49,\"rule\":\"MD033\",\"aliases\":[\"no-inline-html\"],\"description\":\"Inline HTML\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md033---inline-html\"},{\"filename\":\"./README.md\",\"line\":51,\"rule\":\"MD033\",\"aliases\":[\"no-inline-html\"],\"description\":\"Inline HTML\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md033---inline-html\"},{\"filename\":\"./README.md\",\"line\":8,\"rule\":\"MD034\",\"aliases\":[\"no-bare-urls\"],\"description\":\"Bare URL used\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md034---bare-url-used\"},{\"filename\":\"./README.md\",\"line\":14,\"rule\":\"MD034\",\"aliases\":[\"no-bare-urls\"],\"description\":\"Bare URL used\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md034---bare-url-used\"},{\"filename\":\"./README.md\",\"line\":26,\"rule\":\"MD034\",\"aliases\":[\"no-bare-urls\"],\"description\":\"Bare URL used\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md034---bare-url-used\"}]",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/etas.assess.sqaaas/job/dtgeo%25252Fv1.0.0/1/execution/node/61/log?consoleFull"
+                                },
+                                "level": "RECOMMENDED",
+                                "build_repo": "https://github.com/eosc-synergy/etas.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": {
+                                "./README.md": {
+                                    "MD001": {
+                                        "description": "Header levels should only increment by one level at a time",
+                                        "line": [
+                                            5
+                                        ]
+                                    },
+                                    "MD007": {
+                                        "description": "Unordered list indentation",
+                                        "line": [
+                                            33
+                                        ]
+                                    },
+                                    "MD009": {
+                                        "description": "Trailing spaces",
+                                        "line": [
+                                            44
+                                        ]
+                                    },
+                                    "MD013": {
+                                        "description": "Line length",
+                                        "line": [
+                                            7,
+                                            11,
+                                            13,
+                                            18,
+                                            32,
+                                            33,
+                                            34,
+                                            35,
+                                            37,
+                                            38,
+                                            39,
+                                            44,
+                                            47
+                                        ]
+                                    },
+                                    "MD026": {
+                                        "description": "Trailing punctuation in header",
+                                        "line": [
+                                            5,
+                                            11,
+                                            30
+                                        ]
+                                    },
+                                    "MD030": {
+                                        "description": "Spaces after list markers",
+                                        "line": [
+                                            32,
+                                            40,
+                                            42,
+                                            49,
+                                            51,
+                                            33,
+                                            34,
+                                            35,
+                                            36,
+                                            37,
+                                            38,
+                                            39,
+                                            41,
+                                            43,
+                                            44,
+                                            45,
+                                            46,
+                                            47,
+                                            48,
+                                            50,
+                                            52
+                                        ]
+                                    },
+                                    "MD033": {
+                                        "description": "Inline HTML",
+                                        "line": [
+                                            7,
+                                            7,
+                                            8,
+                                            9,
+                                            13,
+                                            13,
+                                            14,
+                                            15,
+                                            16,
+                                            18,
+                                            19,
+                                            20,
+                                            22,
+                                            23,
+                                            26,
+                                            27,
+                                            28,
+                                            32,
+                                            33,
+                                            34,
+                                            35,
+                                            36,
+                                            37,
+                                            37,
+                                            38,
+                                            38,
+                                            38,
+                                            39,
+                                            40,
+                                            40,
+                                            42,
+                                            43,
+                                            44,
+                                            44,
+                                            45,
+                                            46,
+                                            46,
+                                            47,
+                                            47,
+                                            48,
+                                            49,
+                                            51
+                                        ]
+                                    },
+                                    "MD034": {
+                                        "description": "Bare URL used",
+                                        "line": [
+                                            8,
+                                            14,
+                                            26
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "valid": false,
+                    "required_for_next_level_badge": false
+                }
+            },
+            "coverage": {
+                "percentage": 40,
+                "total_subcriteria": 5,
+                "success_subcriteria": 2
+            }
+        },
+        "QC.Lic": {
+            "valid": true,
+            "subcriteria": {
+                "QC.Lic01": {
+                    "description": "Is code licensed to be freely used, modified and distributed by others?",
+                    "requirement_level": "MUST",
+                    "hint": "<p>Your source code repository shall be distributed under an open source license for this subcriterion to pass successfully. Be sure to have a license file present in the code repository matching the name <code>LICENSE</code> with optional extensions (depending on the format used): <code>[.md|.rst|.txt]</code>.</p><p>Valid licenses are any of those approved either by the <a href=\"https://opensource.org/licenses\" target=\"_blank\">Open Source Initiative</a> and/or the Free Software Foundation <a href=\"https://www.gnu.org/licenses/license-list.html\" target=\"_blank\"></a>. You can also check the <a href=\"https://choosealicense.com/\" target=\"_blank\">choosealicense.com</a> site</p>",
+                    "evidence": [
+                        {
+                            "valid": true,
+                            "message": "An Open Source license found in the code repository: MIT",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-licensee",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "licensee",
+                                "lang": "license",
+                                "version": "9.17.0",
+                                "docker": {
+                                    "image": "eoscsynergy/sqaaas-licensee:9.17.0",
+                                    "reviewed": "2021-06-28"
+                                },
+                                "ci": {
+                                    "name": "QC.Lic github.com/swiss-seismological-service/etas licensee",
+                                    "status": "SUCCESS",
+                                    "stdout_command": [
+                                        "licensee detect . --confidence 60 --json "
+                                    ],
+                                    "stdout_text": "{\"licenses\":[{\"key\":\"mit\",\"spdx_id\":\"MIT\",\"meta\":{\"title\":\"MIT License\",\"source\":\"https://spdx.org/licenses/MIT.html\",\"description\":\"A short and simple permissive license with conditions only requiring preservation of copyright and license notices. Licensed works, modifications, and larger works may be distributed under different terms and without source code.\",\"how\":\"Create a text file (typically named LICENSE or LICENSE.txt) in the root of your source code and copy the text of the license into the file. Replace [year] with the current year and [fullname] with the name (or names) of the copyright holders.\",\"using\":{\"Babel\":\"https://github.com/babel/babel/blob/master/LICENSE\",\".NET\":\"https://github.com/dotnet/runtime/blob/main/LICENSE.TXT\",\"Rails\":\"https://github.com/rails/rails/blob/master/MIT-LICENSE\"},\"featured\":true,\"hidden\":false,\"nickname\":null,\"note\":null},\"url\":\"http://choosealicense.com/licenses/mit/\",\"rules\":{\"permissions\":[{\"tag\":\"commercial-use\",\"label\":\"Commercial use\",\"description\":\"The licensed material and derivatives may be used for commercial purposes.\"},{\"tag\":\"modifications\",\"label\":\"Modification\",\"description\":\"The licensed material may be modified.\"},{\"tag\":\"distribution\",\"label\":\"Distribution\",\"description\":\"The licensed material may be distributed.\"},{\"tag\":\"private-use\",\"label\":\"Private use\",\"description\":\"The licensed material may be used and modified in private.\"}],\"conditions\":[{\"tag\":\"include-copyright\",\"label\":\"License and copyright notice\",\"description\":\"A copy of the license and copyright notice must be included with the licensed material.\"}],\"limitations\":[{\"tag\":\"liability\",\"label\":\"Liability\",\"description\":\"This license includes a limitation of liability.\"},{\"tag\":\"warranty\",\"label\":\"Warranty\",\"description\":\"This license explicitly states that it does NOT provide any warranty.\"}]},\"fields\":[{\"name\":\"year\",\"description\":\"The current year\"},{\"name\":\"fullname\",\"description\":\"The full name or username of the repository owner\"}],\"other\":false,\"gpl\":false,\"lgpl\":false,\"cc\":false}],\"matched_files\":[{\"filename\":\"LICENSE\",\"content\":\"MIT License\\n\\nCopyright (c) 2024 ETH Zurich, Leila Mizrahi\\n\\nPermission is hereby granted, free of charge, to any person obtaining a copy\\nof this software and associated documentation files (the \\\"Software\\\"), to deal\\nin the Software without restriction, including without limitation the rights\\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\\ncopies of the Software, and to permit persons to whom the Software is\\nfurnished to do so, subject to the following conditions:\\n\\nThe above copyright notice and this permission notice shall be included in all\\ncopies or substantial portions of the Software.\\n\\nTHE SOFTWARE IS PROVIDED \\\"AS IS\\\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\\nSOFTWARE.\\n\",\"content_hash\":\"4c2c763d64bbc7ef2e58b0ec6d06d90cee9755c9\",\"content_normalized\":\"permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 'software'), to deal in the software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the software, and to permit persons to whom the software is furnished to do so, subject to the following conditions: the above copyright notice and this permission notice shall be included in all copies or substantial portions of the software. the software is provided 'as is', without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. in no event shall the authors or copyright holders be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the software or the use or other dealings in the software.\",\"matcher\":{\"name\":\"exact\",\"confidence\":100},\"matched_license\":\"MIT\",\"attribution\":\"Copyright (c) 2024 ETH Zurich, Leila Mizrahi\"}]}",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/etas.assess.sqaaas/job/dtgeo%25252Fv1.0.0/1/execution/node/70/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/etas.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": {
+                                "licenses": [
+                                    {
+                                        "key": "mit",
+                                        "spdx_id": "MIT",
+                                        "meta": {
+                                            "title": "MIT License",
+                                            "source": "https://spdx.org/licenses/MIT.html",
+                                            "description": "A short and simple permissive license with conditions only requiring preservation of copyright and license notices. Licensed works, modifications, and larger works may be distributed under different terms and without source code.",
+                                            "how": "Create a text file (typically named LICENSE or LICENSE.txt) in the root of your source code and copy the text of the license into the file. Replace [year] with the current year and [fullname] with the name (or names) of the copyright holders.",
+                                            "using": {
+                                                "Babel": "https://github.com/babel/babel/blob/master/LICENSE",
+                                                ".NET": "https://github.com/dotnet/runtime/blob/main/LICENSE.TXT",
+                                                "Rails": "https://github.com/rails/rails/blob/master/MIT-LICENSE"
+                                            },
+                                            "featured": true,
+                                            "hidden": false,
+                                            "nickname": null,
+                                            "note": null
+                                        },
+                                        "url": "http://choosealicense.com/licenses/mit/",
+                                        "rules": {
+                                            "permissions": [
+                                                {
+                                                    "tag": "commercial-use",
+                                                    "label": "Commercial use",
+                                                    "description": "The licensed material and derivatives may be used for commercial purposes."
+                                                },
+                                                {
+                                                    "tag": "modifications",
+                                                    "label": "Modification",
+                                                    "description": "The licensed material may be modified."
+                                                },
+                                                {
+                                                    "tag": "distribution",
+                                                    "label": "Distribution",
+                                                    "description": "The licensed material may be distributed."
+                                                },
+                                                {
+                                                    "tag": "private-use",
+                                                    "label": "Private use",
+                                                    "description": "The licensed material may be used and modified in private."
+                                                }
+                                            ],
+                                            "conditions": [
+                                                {
+                                                    "tag": "include-copyright",
+                                                    "label": "License and copyright notice",
+                                                    "description": "A copy of the license and copyright notice must be included with the licensed material."
+                                                }
+                                            ],
+                                            "limitations": [
+                                                {
+                                                    "tag": "liability",
+                                                    "label": "Liability",
+                                                    "description": "This license includes a limitation of liability."
+                                                },
+                                                {
+                                                    "tag": "warranty",
+                                                    "label": "Warranty",
+                                                    "description": "This license explicitly states that it does NOT provide any warranty."
+                                                }
+                                            ]
+                                        },
+                                        "fields": [
+                                            {
+                                                "name": "year",
+                                                "description": "The current year"
+                                            },
+                                            {
+                                                "name": "fullname",
+                                                "description": "The full name or username of the repository owner"
+                                            }
+                                        ],
+                                        "other": false,
+                                        "gpl": false,
+                                        "lgpl": false,
+                                        "cc": false
+                                    }
+                                ],
+                                "matched_files": [
+                                    {
+                                        "filename": "LICENSE",
+                                        "content": "MIT License\n\nCopyright (c) 2024 ETH Zurich, Leila Mizrahi\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+                                        "content_hash": "4c2c763d64bbc7ef2e58b0ec6d06d90cee9755c9",
+                                        "content_normalized": "permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 'software'), to deal in the software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the software, and to permit persons to whom the software is furnished to do so, subject to the following conditions: the above copyright notice and this permission notice shall be included in all copies or substantial portions of the software. the software is provided 'as is', without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. in no event shall the authors or copyright holders be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the software or the use or other dealings in the software.",
+                                        "matcher": {
+                                            "name": "exact",
+                                            "confidence": 100
+                                        },
+                                        "matched_license": "MIT",
+                                        "attribution": "Copyright (c) 2024 ETH Zurich, Leila Mizrahi"
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "valid": true
+                },
+                "QC.Lic01.1": {
+                    "description": "Is LICENSE file placed in the root path of the code repository?",
+                    "requirement_level": "MUST",
+                    "hint": "Most social coding platforms require the license file to placed in the root path of the code repository, so it is a good practice to use this location by default. Allowed file names are <code>LICENSE</code>, <code>LICENSE.md</code>, <code>LICENSE.rst</code>, <code>LICENSE.txt</code>",
+                    "evidence": [
+                        {
+                            "valid": true,
+                            "message": "LICENSE file is visible at the root path of the code repository: LICENSE",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-licensee",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "licensee",
+                                "lang": "license",
+                                "version": "9.17.0",
+                                "docker": {
+                                    "image": "eoscsynergy/sqaaas-licensee:9.17.0",
+                                    "reviewed": "2021-06-28"
+                                },
+                                "ci": {
+                                    "name": "QC.Lic github.com/swiss-seismological-service/etas licensee",
+                                    "status": "SUCCESS",
+                                    "stdout_command": [
+                                        "licensee detect . --confidence 60 --json "
+                                    ],
+                                    "stdout_text": "{\"licenses\":[{\"key\":\"mit\",\"spdx_id\":\"MIT\",\"meta\":{\"title\":\"MIT License\",\"source\":\"https://spdx.org/licenses/MIT.html\",\"description\":\"A short and simple permissive license with conditions only requiring preservation of copyright and license notices. Licensed works, modifications, and larger works may be distributed under different terms and without source code.\",\"how\":\"Create a text file (typically named LICENSE or LICENSE.txt) in the root of your source code and copy the text of the license into the file. Replace [year] with the current year and [fullname] with the name (or names) of the copyright holders.\",\"using\":{\"Babel\":\"https://github.com/babel/babel/blob/master/LICENSE\",\".NET\":\"https://github.com/dotnet/runtime/blob/main/LICENSE.TXT\",\"Rails\":\"https://github.com/rails/rails/blob/master/MIT-LICENSE\"},\"featured\":true,\"hidden\":false,\"nickname\":null,\"note\":null},\"url\":\"http://choosealicense.com/licenses/mit/\",\"rules\":{\"permissions\":[{\"tag\":\"commercial-use\",\"label\":\"Commercial use\",\"description\":\"The licensed material and derivatives may be used for commercial purposes.\"},{\"tag\":\"modifications\",\"label\":\"Modification\",\"description\":\"The licensed material may be modified.\"},{\"tag\":\"distribution\",\"label\":\"Distribution\",\"description\":\"The licensed material may be distributed.\"},{\"tag\":\"private-use\",\"label\":\"Private use\",\"description\":\"The licensed material may be used and modified in private.\"}],\"conditions\":[{\"tag\":\"include-copyright\",\"label\":\"License and copyright notice\",\"description\":\"A copy of the license and copyright notice must be included with the licensed material.\"}],\"limitations\":[{\"tag\":\"liability\",\"label\":\"Liability\",\"description\":\"This license includes a limitation of liability.\"},{\"tag\":\"warranty\",\"label\":\"Warranty\",\"description\":\"This license explicitly states that it does NOT provide any warranty.\"}]},\"fields\":[{\"name\":\"year\",\"description\":\"The current year\"},{\"name\":\"fullname\",\"description\":\"The full name or username of the repository owner\"}],\"other\":false,\"gpl\":false,\"lgpl\":false,\"cc\":false}],\"matched_files\":[{\"filename\":\"LICENSE\",\"content\":\"MIT License\\n\\nCopyright (c) 2024 ETH Zurich, Leila Mizrahi\\n\\nPermission is hereby granted, free of charge, to any person obtaining a copy\\nof this software and associated documentation files (the \\\"Software\\\"), to deal\\nin the Software without restriction, including without limitation the rights\\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\\ncopies of the Software, and to permit persons to whom the Software is\\nfurnished to do so, subject to the following conditions:\\n\\nThe above copyright notice and this permission notice shall be included in all\\ncopies or substantial portions of the Software.\\n\\nTHE SOFTWARE IS PROVIDED \\\"AS IS\\\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\\nSOFTWARE.\\n\",\"content_hash\":\"4c2c763d64bbc7ef2e58b0ec6d06d90cee9755c9\",\"content_normalized\":\"permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 'software'), to deal in the software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the software, and to permit persons to whom the software is furnished to do so, subject to the following conditions: the above copyright notice and this permission notice shall be included in all copies or substantial portions of the software. the software is provided 'as is', without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. in no event shall the authors or copyright holders be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the software or the use or other dealings in the software.\",\"matcher\":{\"name\":\"exact\",\"confidence\":100},\"matched_license\":\"MIT\",\"attribution\":\"Copyright (c) 2024 ETH Zurich, Leila Mizrahi\"}]}",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/etas.assess.sqaaas/job/dtgeo%25252Fv1.0.0/1/execution/node/70/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/etas.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": {
+                                "licenses": [
+                                    {
+                                        "key": "mit",
+                                        "spdx_id": "MIT",
+                                        "meta": {
+                                            "title": "MIT License",
+                                            "source": "https://spdx.org/licenses/MIT.html",
+                                            "description": "A short and simple permissive license with conditions only requiring preservation of copyright and license notices. Licensed works, modifications, and larger works may be distributed under different terms and without source code.",
+                                            "how": "Create a text file (typically named LICENSE or LICENSE.txt) in the root of your source code and copy the text of the license into the file. Replace [year] with the current year and [fullname] with the name (or names) of the copyright holders.",
+                                            "using": {
+                                                "Babel": "https://github.com/babel/babel/blob/master/LICENSE",
+                                                ".NET": "https://github.com/dotnet/runtime/blob/main/LICENSE.TXT",
+                                                "Rails": "https://github.com/rails/rails/blob/master/MIT-LICENSE"
+                                            },
+                                            "featured": true,
+                                            "hidden": false,
+                                            "nickname": null,
+                                            "note": null
+                                        },
+                                        "url": "http://choosealicense.com/licenses/mit/",
+                                        "rules": {
+                                            "permissions": [
+                                                {
+                                                    "tag": "commercial-use",
+                                                    "label": "Commercial use",
+                                                    "description": "The licensed material and derivatives may be used for commercial purposes."
+                                                },
+                                                {
+                                                    "tag": "modifications",
+                                                    "label": "Modification",
+                                                    "description": "The licensed material may be modified."
+                                                },
+                                                {
+                                                    "tag": "distribution",
+                                                    "label": "Distribution",
+                                                    "description": "The licensed material may be distributed."
+                                                },
+                                                {
+                                                    "tag": "private-use",
+                                                    "label": "Private use",
+                                                    "description": "The licensed material may be used and modified in private."
+                                                }
+                                            ],
+                                            "conditions": [
+                                                {
+                                                    "tag": "include-copyright",
+                                                    "label": "License and copyright notice",
+                                                    "description": "A copy of the license and copyright notice must be included with the licensed material."
+                                                }
+                                            ],
+                                            "limitations": [
+                                                {
+                                                    "tag": "liability",
+                                                    "label": "Liability",
+                                                    "description": "This license includes a limitation of liability."
+                                                },
+                                                {
+                                                    "tag": "warranty",
+                                                    "label": "Warranty",
+                                                    "description": "This license explicitly states that it does NOT provide any warranty."
+                                                }
+                                            ]
+                                        },
+                                        "fields": [
+                                            {
+                                                "name": "year",
+                                                "description": "The current year"
+                                            },
+                                            {
+                                                "name": "fullname",
+                                                "description": "The full name or username of the repository owner"
+                                            }
+                                        ],
+                                        "other": false,
+                                        "gpl": false,
+                                        "lgpl": false,
+                                        "cc": false
+                                    }
+                                ],
+                                "matched_files": [
+                                    {
+                                        "filename": "LICENSE",
+                                        "content": "MIT License\n\nCopyright (c) 2024 ETH Zurich, Leila Mizrahi\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+                                        "content_hash": "4c2c763d64bbc7ef2e58b0ec6d06d90cee9755c9",
+                                        "content_normalized": "permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 'software'), to deal in the software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the software, and to permit persons to whom the software is furnished to do so, subject to the following conditions: the above copyright notice and this permission notice shall be included in all copies or substantial portions of the software. the software is provided 'as is', without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. in no event shall the authors or copyright holders be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the software or the use or other dealings in the software.",
+                                        "matcher": {
+                                            "name": "exact",
+                                            "confidence": 100
+                                        },
+                                        "matched_license": "MIT",
+                                        "attribution": "Copyright (c) 2024 ETH Zurich, Leila Mizrahi"
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "valid": true
+                },
+                "QC.Lic02": {
+                    "description": "Does the code use a license approved by Open Source Initiative?",
+                    "requirement_level": "MUST",
+                    "hint": "The <a href=\"https://opensource.org/\" target=\"_blank\">Open Source Initiative (OSI)</a> sets out the requirements for software to be legally declared as Open Source. The license in use shall be in the list of <a href=\"https://opensource.org/license-list.html\" target=\"_blank\">OSI-approved licenses</a> for this criterion to be successful",
+                    "evidence": [
+                        {
+                            "valid": true,
+                            "message": "License MIT is approved by the Open Source Initiative",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-licensee",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "licensee",
+                                "lang": "license",
+                                "version": "9.17.0",
+                                "docker": {
+                                    "image": "eoscsynergy/sqaaas-licensee:9.17.0",
+                                    "reviewed": "2021-06-28"
+                                },
+                                "ci": {
+                                    "name": "QC.Lic github.com/swiss-seismological-service/etas licensee",
+                                    "status": "SUCCESS",
+                                    "stdout_command": [
+                                        "licensee detect . --confidence 60 --json "
+                                    ],
+                                    "stdout_text": "{\"licenses\":[{\"key\":\"mit\",\"spdx_id\":\"MIT\",\"meta\":{\"title\":\"MIT License\",\"source\":\"https://spdx.org/licenses/MIT.html\",\"description\":\"A short and simple permissive license with conditions only requiring preservation of copyright and license notices. Licensed works, modifications, and larger works may be distributed under different terms and without source code.\",\"how\":\"Create a text file (typically named LICENSE or LICENSE.txt) in the root of your source code and copy the text of the license into the file. Replace [year] with the current year and [fullname] with the name (or names) of the copyright holders.\",\"using\":{\"Babel\":\"https://github.com/babel/babel/blob/master/LICENSE\",\".NET\":\"https://github.com/dotnet/runtime/blob/main/LICENSE.TXT\",\"Rails\":\"https://github.com/rails/rails/blob/master/MIT-LICENSE\"},\"featured\":true,\"hidden\":false,\"nickname\":null,\"note\":null},\"url\":\"http://choosealicense.com/licenses/mit/\",\"rules\":{\"permissions\":[{\"tag\":\"commercial-use\",\"label\":\"Commercial use\",\"description\":\"The licensed material and derivatives may be used for commercial purposes.\"},{\"tag\":\"modifications\",\"label\":\"Modification\",\"description\":\"The licensed material may be modified.\"},{\"tag\":\"distribution\",\"label\":\"Distribution\",\"description\":\"The licensed material may be distributed.\"},{\"tag\":\"private-use\",\"label\":\"Private use\",\"description\":\"The licensed material may be used and modified in private.\"}],\"conditions\":[{\"tag\":\"include-copyright\",\"label\":\"License and copyright notice\",\"description\":\"A copy of the license and copyright notice must be included with the licensed material.\"}],\"limitations\":[{\"tag\":\"liability\",\"label\":\"Liability\",\"description\":\"This license includes a limitation of liability.\"},{\"tag\":\"warranty\",\"label\":\"Warranty\",\"description\":\"This license explicitly states that it does NOT provide any warranty.\"}]},\"fields\":[{\"name\":\"year\",\"description\":\"The current year\"},{\"name\":\"fullname\",\"description\":\"The full name or username of the repository owner\"}],\"other\":false,\"gpl\":false,\"lgpl\":false,\"cc\":false}],\"matched_files\":[{\"filename\":\"LICENSE\",\"content\":\"MIT License\\n\\nCopyright (c) 2024 ETH Zurich, Leila Mizrahi\\n\\nPermission is hereby granted, free of charge, to any person obtaining a copy\\nof this software and associated documentation files (the \\\"Software\\\"), to deal\\nin the Software without restriction, including without limitation the rights\\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\\ncopies of the Software, and to permit persons to whom the Software is\\nfurnished to do so, subject to the following conditions:\\n\\nThe above copyright notice and this permission notice shall be included in all\\ncopies or substantial portions of the Software.\\n\\nTHE SOFTWARE IS PROVIDED \\\"AS IS\\\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\\nSOFTWARE.\\n\",\"content_hash\":\"4c2c763d64bbc7ef2e58b0ec6d06d90cee9755c9\",\"content_normalized\":\"permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 'software'), to deal in the software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the software, and to permit persons to whom the software is furnished to do so, subject to the following conditions: the above copyright notice and this permission notice shall be included in all copies or substantial portions of the software. the software is provided 'as is', without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. in no event shall the authors or copyright holders be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the software or the use or other dealings in the software.\",\"matcher\":{\"name\":\"exact\",\"confidence\":100},\"matched_license\":\"MIT\",\"attribution\":\"Copyright (c) 2024 ETH Zurich, Leila Mizrahi\"}]}",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/etas.assess.sqaaas/job/dtgeo%25252Fv1.0.0/1/execution/node/70/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/etas.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": {
+                                "licenses": [
+                                    {
+                                        "key": "mit",
+                                        "spdx_id": "MIT",
+                                        "meta": {
+                                            "title": "MIT License",
+                                            "source": "https://spdx.org/licenses/MIT.html",
+                                            "description": "A short and simple permissive license with conditions only requiring preservation of copyright and license notices. Licensed works, modifications, and larger works may be distributed under different terms and without source code.",
+                                            "how": "Create a text file (typically named LICENSE or LICENSE.txt) in the root of your source code and copy the text of the license into the file. Replace [year] with the current year and [fullname] with the name (or names) of the copyright holders.",
+                                            "using": {
+                                                "Babel": "https://github.com/babel/babel/blob/master/LICENSE",
+                                                ".NET": "https://github.com/dotnet/runtime/blob/main/LICENSE.TXT",
+                                                "Rails": "https://github.com/rails/rails/blob/master/MIT-LICENSE"
+                                            },
+                                            "featured": true,
+                                            "hidden": false,
+                                            "nickname": null,
+                                            "note": null
+                                        },
+                                        "url": "http://choosealicense.com/licenses/mit/",
+                                        "rules": {
+                                            "permissions": [
+                                                {
+                                                    "tag": "commercial-use",
+                                                    "label": "Commercial use",
+                                                    "description": "The licensed material and derivatives may be used for commercial purposes."
+                                                },
+                                                {
+                                                    "tag": "modifications",
+                                                    "label": "Modification",
+                                                    "description": "The licensed material may be modified."
+                                                },
+                                                {
+                                                    "tag": "distribution",
+                                                    "label": "Distribution",
+                                                    "description": "The licensed material may be distributed."
+                                                },
+                                                {
+                                                    "tag": "private-use",
+                                                    "label": "Private use",
+                                                    "description": "The licensed material may be used and modified in private."
+                                                }
+                                            ],
+                                            "conditions": [
+                                                {
+                                                    "tag": "include-copyright",
+                                                    "label": "License and copyright notice",
+                                                    "description": "A copy of the license and copyright notice must be included with the licensed material."
+                                                }
+                                            ],
+                                            "limitations": [
+                                                {
+                                                    "tag": "liability",
+                                                    "label": "Liability",
+                                                    "description": "This license includes a limitation of liability."
+                                                },
+                                                {
+                                                    "tag": "warranty",
+                                                    "label": "Warranty",
+                                                    "description": "This license explicitly states that it does NOT provide any warranty."
+                                                }
+                                            ]
+                                        },
+                                        "fields": [
+                                            {
+                                                "name": "year",
+                                                "description": "The current year"
+                                            },
+                                            {
+                                                "name": "fullname",
+                                                "description": "The full name or username of the repository owner"
+                                            }
+                                        ],
+                                        "other": false,
+                                        "gpl": false,
+                                        "lgpl": false,
+                                        "cc": false
+                                    }
+                                ],
+                                "matched_files": [
+                                    {
+                                        "filename": "LICENSE",
+                                        "content": "MIT License\n\nCopyright (c) 2024 ETH Zurich, Leila Mizrahi\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+                                        "content_hash": "4c2c763d64bbc7ef2e58b0ec6d06d90cee9755c9",
+                                        "content_normalized": "permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 'software'), to deal in the software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the software, and to permit persons to whom the software is furnished to do so, subject to the following conditions: the above copyright notice and this permission notice shall be included in all copies or substantial portions of the software. the software is provided 'as is', without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. in no event shall the authors or copyright holders be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the software or the use or other dealings in the software.",
+                                        "matcher": {
+                                            "name": "exact",
+                                            "confidence": 100
+                                        },
+                                        "matched_license": "MIT",
+                                        "attribution": "Copyright (c) 2024 ETH Zurich, Leila Mizrahi"
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "valid": true
+                },
+                "QC.Lic02.1": {
+                    "description": "Does the code use an Open Source Initiative's popular-recognized license?",
+                    "requirement_level": "MAY",
+                    "hint": "The Open Source Initiative (OSI) sets out the requirements for software to be legally declared as Open Source. OSI provides a list of popular licenses that shall match most of the demands. The license in use shall be in the list of <a href=\"https://opensource.org/license-list.html\" target=\"_blank\">OSI popular licenses</a> for this criterion to be successful",
+                    "evidence": [
+                        {
+                            "valid": true,
+                            "message": "License MIT is listed under the Open Source Initiative popular category",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-licensee",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "licensee",
+                                "lang": "license",
+                                "version": "9.17.0",
+                                "docker": {
+                                    "image": "eoscsynergy/sqaaas-licensee:9.17.0",
+                                    "reviewed": "2021-06-28"
+                                },
+                                "ci": {
+                                    "name": "QC.Lic github.com/swiss-seismological-service/etas licensee",
+                                    "status": "SUCCESS",
+                                    "stdout_command": [
+                                        "licensee detect . --confidence 60 --json "
+                                    ],
+                                    "stdout_text": "{\"licenses\":[{\"key\":\"mit\",\"spdx_id\":\"MIT\",\"meta\":{\"title\":\"MIT License\",\"source\":\"https://spdx.org/licenses/MIT.html\",\"description\":\"A short and simple permissive license with conditions only requiring preservation of copyright and license notices. Licensed works, modifications, and larger works may be distributed under different terms and without source code.\",\"how\":\"Create a text file (typically named LICENSE or LICENSE.txt) in the root of your source code and copy the text of the license into the file. Replace [year] with the current year and [fullname] with the name (or names) of the copyright holders.\",\"using\":{\"Babel\":\"https://github.com/babel/babel/blob/master/LICENSE\",\".NET\":\"https://github.com/dotnet/runtime/blob/main/LICENSE.TXT\",\"Rails\":\"https://github.com/rails/rails/blob/master/MIT-LICENSE\"},\"featured\":true,\"hidden\":false,\"nickname\":null,\"note\":null},\"url\":\"http://choosealicense.com/licenses/mit/\",\"rules\":{\"permissions\":[{\"tag\":\"commercial-use\",\"label\":\"Commercial use\",\"description\":\"The licensed material and derivatives may be used for commercial purposes.\"},{\"tag\":\"modifications\",\"label\":\"Modification\",\"description\":\"The licensed material may be modified.\"},{\"tag\":\"distribution\",\"label\":\"Distribution\",\"description\":\"The licensed material may be distributed.\"},{\"tag\":\"private-use\",\"label\":\"Private use\",\"description\":\"The licensed material may be used and modified in private.\"}],\"conditions\":[{\"tag\":\"include-copyright\",\"label\":\"License and copyright notice\",\"description\":\"A copy of the license and copyright notice must be included with the licensed material.\"}],\"limitations\":[{\"tag\":\"liability\",\"label\":\"Liability\",\"description\":\"This license includes a limitation of liability.\"},{\"tag\":\"warranty\",\"label\":\"Warranty\",\"description\":\"This license explicitly states that it does NOT provide any warranty.\"}]},\"fields\":[{\"name\":\"year\",\"description\":\"The current year\"},{\"name\":\"fullname\",\"description\":\"The full name or username of the repository owner\"}],\"other\":false,\"gpl\":false,\"lgpl\":false,\"cc\":false}],\"matched_files\":[{\"filename\":\"LICENSE\",\"content\":\"MIT License\\n\\nCopyright (c) 2024 ETH Zurich, Leila Mizrahi\\n\\nPermission is hereby granted, free of charge, to any person obtaining a copy\\nof this software and associated documentation files (the \\\"Software\\\"), to deal\\nin the Software without restriction, including without limitation the rights\\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\\ncopies of the Software, and to permit persons to whom the Software is\\nfurnished to do so, subject to the following conditions:\\n\\nThe above copyright notice and this permission notice shall be included in all\\ncopies or substantial portions of the Software.\\n\\nTHE SOFTWARE IS PROVIDED \\\"AS IS\\\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\\nSOFTWARE.\\n\",\"content_hash\":\"4c2c763d64bbc7ef2e58b0ec6d06d90cee9755c9\",\"content_normalized\":\"permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 'software'), to deal in the software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the software, and to permit persons to whom the software is furnished to do so, subject to the following conditions: the above copyright notice and this permission notice shall be included in all copies or substantial portions of the software. the software is provided 'as is', without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. in no event shall the authors or copyright holders be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the software or the use or other dealings in the software.\",\"matcher\":{\"name\":\"exact\",\"confidence\":100},\"matched_license\":\"MIT\",\"attribution\":\"Copyright (c) 2024 ETH Zurich, Leila Mizrahi\"}]}",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/etas.assess.sqaaas/job/dtgeo%25252Fv1.0.0/1/execution/node/70/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/etas.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": {
+                                "licenses": [
+                                    {
+                                        "key": "mit",
+                                        "spdx_id": "MIT",
+                                        "meta": {
+                                            "title": "MIT License",
+                                            "source": "https://spdx.org/licenses/MIT.html",
+                                            "description": "A short and simple permissive license with conditions only requiring preservation of copyright and license notices. Licensed works, modifications, and larger works may be distributed under different terms and without source code.",
+                                            "how": "Create a text file (typically named LICENSE or LICENSE.txt) in the root of your source code and copy the text of the license into the file. Replace [year] with the current year and [fullname] with the name (or names) of the copyright holders.",
+                                            "using": {
+                                                "Babel": "https://github.com/babel/babel/blob/master/LICENSE",
+                                                ".NET": "https://github.com/dotnet/runtime/blob/main/LICENSE.TXT",
+                                                "Rails": "https://github.com/rails/rails/blob/master/MIT-LICENSE"
+                                            },
+                                            "featured": true,
+                                            "hidden": false,
+                                            "nickname": null,
+                                            "note": null
+                                        },
+                                        "url": "http://choosealicense.com/licenses/mit/",
+                                        "rules": {
+                                            "permissions": [
+                                                {
+                                                    "tag": "commercial-use",
+                                                    "label": "Commercial use",
+                                                    "description": "The licensed material and derivatives may be used for commercial purposes."
+                                                },
+                                                {
+                                                    "tag": "modifications",
+                                                    "label": "Modification",
+                                                    "description": "The licensed material may be modified."
+                                                },
+                                                {
+                                                    "tag": "distribution",
+                                                    "label": "Distribution",
+                                                    "description": "The licensed material may be distributed."
+                                                },
+                                                {
+                                                    "tag": "private-use",
+                                                    "label": "Private use",
+                                                    "description": "The licensed material may be used and modified in private."
+                                                }
+                                            ],
+                                            "conditions": [
+                                                {
+                                                    "tag": "include-copyright",
+                                                    "label": "License and copyright notice",
+                                                    "description": "A copy of the license and copyright notice must be included with the licensed material."
+                                                }
+                                            ],
+                                            "limitations": [
+                                                {
+                                                    "tag": "liability",
+                                                    "label": "Liability",
+                                                    "description": "This license includes a limitation of liability."
+                                                },
+                                                {
+                                                    "tag": "warranty",
+                                                    "label": "Warranty",
+                                                    "description": "This license explicitly states that it does NOT provide any warranty."
+                                                }
+                                            ]
+                                        },
+                                        "fields": [
+                                            {
+                                                "name": "year",
+                                                "description": "The current year"
+                                            },
+                                            {
+                                                "name": "fullname",
+                                                "description": "The full name or username of the repository owner"
+                                            }
+                                        ],
+                                        "other": false,
+                                        "gpl": false,
+                                        "lgpl": false,
+                                        "cc": false
+                                    }
+                                ],
+                                "matched_files": [
+                                    {
+                                        "filename": "LICENSE",
+                                        "content": "MIT License\n\nCopyright (c) 2024 ETH Zurich, Leila Mizrahi\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+                                        "content_hash": "4c2c763d64bbc7ef2e58b0ec6d06d90cee9755c9",
+                                        "content_normalized": "permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 'software'), to deal in the software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the software, and to permit persons to whom the software is furnished to do so, subject to the following conditions: the above copyright notice and this permission notice shall be included in all copies or substantial portions of the software. the software is provided 'as is', without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. in no event shall the authors or copyright holders be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the software or the use or other dealings in the software.",
+                                        "matcher": {
+                                            "name": "exact",
+                                            "confidence": 100
+                                        },
+                                        "matched_license": "MIT",
+                                        "attribution": "Copyright (c) 2024 ETH Zurich, Leila Mizrahi"
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "valid": true
+                }
+            },
+            "coverage": {
+                "percentage": 100,
+                "total_subcriteria": 4,
+                "success_subcriteria": 4
+            }
+        },
+        "QC.Sec": {
+            "valid": true,
+            "subcriteria": {
+                "QC.Sec02": {
+                    "description": "Is the source code passing Static Analysis Security Testing (SAST)?",
+                    "requirement_level": "MUST",
+                    "hint": "Please check & solve the security weaknesses found by the SAST tool",
+                    "evidence": [
+                        {
+                            "valid": true,
+                            "message": "Source code files pass SAST checks performed by bandit tool",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-bandit",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "bandit",
+                                "lang": "Python",
+                                "version": "1.7.4",
+                                "docker": {
+                                    "dockerfile": "QC.Sec/bandit/Dockerfile",
+                                    "reviewed": "2022-03-04"
+                                },
+                                "ci": {
+                                    "name": "QC.Sec github.com/swiss-seismological-service/etas bandit",
+                                    "status": "SUCCESS",
+                                    "stdout_command": [
+                                        "bandit -f json --quiet  --confidence-level high --severity-level high --recursive  ."
+                                    ],
+                                    "stdout_text": "{\n  \"errors\": [],\n  \"generated_at\": \"2025-07-24T10:59:19Z\",\n  \"metrics\": {\n    \"./etas/__init__.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 8,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./etas/download.py\": {\n      \"CONFIDENCE.HIGH\": 1,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 1,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 37,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./etas/evaluation.py\": {\n      \"CONFIDENCE.HIGH\": 2,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 2,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 316,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./etas/inversion.py\": {\n      \"CONFIDENCE.HIGH\": 8,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 7,\n      \"SEVERITY.MEDIUM\": 1,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 1509,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./etas/mc_b_est.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 173,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./etas/oef/__init__.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 1,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./etas/oef/data/__init__.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 0,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./etas/oef/entrypoint.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 125,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./etas/plots.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 344,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./etas/simulation.py\": {\n      \"CONFIDENCE.HIGH\": 3,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 3,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 1069,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./run_entrypoints/run_entrypoint_europe.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 70,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./run_entrypoints/run_entrypoint_sui.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 72,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./runnable_code/ch_forecast.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 25,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./runnable_code/estimate_mc.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 28,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./runnable_code/invert_etas.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 78,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./runnable_code/predict_etas.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 16,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./runnable_code/reload_example.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 20,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./runnable_code/simulate_catalog.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 32,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./runnable_code/simulate_catalog_continuation.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 20,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./runnable_code/visualise_fit.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 26,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"_totals\": {\n      \"CONFIDENCE.HIGH\": 14,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 12,\n      \"SEVERITY.MEDIUM\": 2,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 3969,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    }\n  },\n  \"results\": []\n}",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/etas.assess.sqaaas/job/dtgeo%25252Fv1.0.0/1/execution/node/79/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/etas.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": {
+                                "errors": [],
+                                "generated_at": "2025-07-24T10:59:19Z",
+                                "metrics": {
+                                    "./etas/__init__.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 8,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./etas/download.py": {
+                                        "CONFIDENCE.HIGH": 1,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 1,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 37,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./etas/evaluation.py": {
+                                        "CONFIDENCE.HIGH": 2,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 2,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 316,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./etas/inversion.py": {
+                                        "CONFIDENCE.HIGH": 8,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 7,
+                                        "SEVERITY.MEDIUM": 1,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 1509,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./etas/mc_b_est.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 173,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./etas/oef/__init__.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 1,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./etas/oef/data/__init__.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 0,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./etas/oef/entrypoint.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 125,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./etas/plots.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 344,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./etas/simulation.py": {
+                                        "CONFIDENCE.HIGH": 3,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 3,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 1069,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./run_entrypoints/run_entrypoint_europe.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 70,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./run_entrypoints/run_entrypoint_sui.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 72,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./runnable_code/ch_forecast.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 25,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./runnable_code/estimate_mc.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 28,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./runnable_code/invert_etas.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 78,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./runnable_code/predict_etas.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 16,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./runnable_code/reload_example.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 20,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./runnable_code/simulate_catalog.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 32,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./runnable_code/simulate_catalog_continuation.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 20,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./runnable_code/visualise_fit.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 26,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "_totals": {
+                                        "CONFIDENCE.HIGH": 14,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 12,
+                                        "SEVERITY.MEDIUM": 2,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 3969,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    }
+                                },
+                                "results": []
+                            }
+                        }
+                    ],
+                    "valid": true
+                }
+            },
+            "coverage": {
+                "percentage": 100,
+                "total_subcriteria": 1,
+                "success_subcriteria": 1
+            }
+        },
+        "QC.Sty": {
+            "valid": false,
+            "subcriteria": {
+                "QC.Sty01": {
+                    "description": "Is the software product following a style standard for Python files?",
+                    "requirement_level": "MUST",
+                    "hint": "Please check & solve the security weaknesses found by the linter tool",
+                    "evidence": [
+                        {
+                            "valid": false,
+                            "message": "Python files are not fully compliant with flake8 (pycodestyle, pyflakes, mccabe) standard",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-flake8",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "flake8",
+                                "lang": "Python",
+                                "version": "4.0.1 (mccabe: 0.6.1, pycodestyle: 2.8.0, pyflakes: 2.4.0)",
+                                "docker": {
+                                    "image": "pipelinecomponents/flake8:0.9.0",
+                                    "reviewed": "2022-03-04"
+                                },
+                                "ci": {
+                                    "name": "QC.Sty github.com/swiss-seismological-service/etas flake8",
+                                    "status": "FAILED",
+                                    "stdout_command": [
+                                        "flake8 ."
+                                    ],
+                                    "stdout_text": "./runnable_code/predict_etas.py:3:1: F401 'sys' imported but unused\n./runnable_code/predict_etas.py:15:44: E226 missing whitespace around arithmetic operator\n./runnable_code/predict_etas.py:22:61: W292 no newline at end of file\n./runnable_code/invert_etas.py:86:72: W291 trailing whitespace\n./runnable_code/invert_etas.py:88:68: W291 trailing whitespace\n./etas/plots.py:298:19: E999 SyntaxError: invalid syntax\n./etas/mc_b_est.py:45:24: E124 closing bracket does not match visual indentation\n./etas/inversion.py:175:80: E501 line too long (81 > 79 characters)\n./etas/inversion.py:497:80: E501 line too long (80 > 79 characters)\n./etas/inversion.py:514:80: E501 line too long (88 > 79 characters)\n./etas/inversion.py:610:80: E501 line too long (80 > 79 characters)\n./etas/inversion.py:773:9: E722 do not use bare 'except'\n./etas/inversion.py:787:80: E501 line too long (80 > 79 characters)\n./etas/inversion.py:988:80: E501 line too long (84 > 79 characters)\n./etas/inversion.py:1041:17: E704 multiple statements on one line (def)\n./etas/inversion.py:1086:80: E501 line too long (87 > 79 characters)\n./etas/inversion.py:1138:13: E722 do not use bare 'except'\n./etas/inversion.py:1229:80: E501 line too long (81 > 79 characters)\n./etas/inversion.py:1284:80: E501 line too long (88 > 79 characters)\n./etas/inversion.py:1396:80: E501 line too long (82 > 79 characters)\n./etas/inversion.py:1492:80: E501 line too long (84 > 79 characters)\n./etas/inversion.py:1519:80: E501 line too long (88 > 79 characters)\n./etas/inversion.py:1542:80: E501 line too long (82 > 79 characters)\n./etas/inversion.py:1568:80: E501 line too long (81 > 79 characters)\n./etas/inversion.py:1572:80: E501 line too long (82 > 79 characters)\n./etas/inversion.py:1643:80: E501 line too long (82 > 79 characters)\n./etas/inversion.py:1732:80: E501 line too long (80 > 79 characters)\n./etas/evaluation.py:1:1: F401 'sys' imported but unused\n./etas/evaluation.py:2:80: E501 line too long (135 > 79 characters)\n./etas/evaluation.py:10:1: F401 'scipy.special.expi' imported but unused\n./etas/evaluation.py:12:21: E272 multiple spaces before keyword\n./etas/evaluation.py:13:1: F811 redefinition of unused 'Polygon' from line 6\n./etas/evaluation.py:13:1: F401 'shapely.geometry.Point' imported but unused\n./etas/evaluation.py:13:1: F401 'shapely.geometry.LineString' imported but unused\n./etas/evaluation.py:14:1: F401 'matplotlib.pyplot as plt' imported but unused\n./etas/evaluation.py:17:34: E231 missing whitespace after ','\n./etas/evaluation.py:17:55: E231 missing whitespace after ','\n./etas/evaluation.py:17:77: E231 missing whitespace after ','\n./etas/evaluation.py:17:80: E501 line too long (100 > 79 characters)\n./etas/evaluation.py:20:17: E126 continuation line over-indented for hanging indent\n./etas/evaluation.py:27:13: E126 continuation line over-indented for hanging indent\n./etas/evaluation.py:29:1: E302 expected 2 blank lines, found 1\n./etas/evaluation.py:34:1: E303 too many blank lines (3)\n./etas/evaluation.py:63:80: E501 line too long (115 > 79 characters)\n./etas/evaluation.py:105:1: W293 blank line contains whitespace\n./etas/evaluation.py:115:9: E122 continuation line missing indentation or outdented\n./etas/evaluation.py:116:9: E122 continuation line missing indentation or outdented\n./etas/evaluation.py:117:9: E122 continuation line missing indentation or outdented\n./etas/evaluation.py:118:9: E122 continuation line missing indentation or outdented\n./etas/evaluation.py:119:9: E122 continuation line missing indentation or outdented\n./etas/evaluation.py:120:9: E122 continuation line missing indentation or outdented\n./etas/evaluation.py:121:9: E122 continuation line missing indentation or outdented\n./etas/evaluation.py:122:9: E122 continuation line missing indentation or outdented\n./etas/evaluation.py:123:9: E122 continuation line missing indentation or outdented\n./etas/evaluation.py:124:9: E122 continuation line missing indentation or outdented\n./etas/evaluation.py:135:21: E231 missing whitespace after ','\n./etas/evaluation.py:147:9: E303 too many blank lines (2)\n./etas/evaluation.py:160:80: E501 line too long (164 > 79 characters)\n./etas/evaluation.py:214:80: E501 line too long (81 > 79 characters)\n./etas/evaluation.py:222:80: E501 line too long (80 > 79 characters)\n./etas/evaluation.py:238:80: E501 line too long (103 > 79 characters)\n./etas/evaluation.py:244:80: E501 line too long (97 > 79 characters)\n./etas/evaluation.py:247:80: E501 line too long (86 > 79 characters)\n./etas/evaluation.py:250:21: E226 missing whitespace around arithmetic operator\n./etas/evaluation.py:253:5: E303 too many blank lines (2)\n./etas/evaluation.py:256:25: E231 missing whitespace after ','\n./etas/evaluation.py:257:57: E226 missing whitespace around arithmetic operator\n./etas/evaluation.py:263:5: E303 too many blank lines (2)\n./etas/evaluation.py:266:80: E501 line too long (93 > 79 characters)\n./etas/evaluation.py:273:38: E231 missing whitespace after ','\n./etas/evaluation.py:280:1: W293 blank line contains whitespace\n./etas/evaluation.py:281:5: E303 too many blank lines (3)\n./etas/evaluation.py:281:22: E261 at least two spaces before inline comment\n./etas/evaluation.py:281:23: E262 inline comment should start with '# '\n./etas/evaluation.py:281:80: E501 line too long (107 > 79 characters)\n./etas/evaluation.py:287:40: E226 missing whitespace around arithmetic operator\n./etas/evaluation.py:287:63: E226 missing whitespace around arithmetic operator\n./etas/evaluation.py:287:80: E501 line too long (104 > 79 characters)\n./etas/evaluation.py:287:97: E226 missing whitespace around arithmetic operator\n./etas/evaluation.py:290:13: E128 continuation line under-indented for visual indent\n./etas/evaluation.py:290:14: E225 missing whitespace around operator\n./etas/evaluation.py:291:13: E128 continuation line under-indented for visual indent\n./etas/evaluation.py:291:14: E225 missing whitespace around operator\n./etas/evaluation.py:291:61: E226 missing whitespace around arithmetic operator\n./etas/evaluation.py:291:80: E501 line too long (85 > 79 characters)\n./etas/evaluation.py:294:13: E303 too many blank lines (2)\n./etas/evaluation.py:294:35: E226 missing whitespace around arithmetic operator\n./etas/evaluation.py:296:22: W291 trailing whitespace\n./etas/evaluation.py:297:80: E501 line too long (117 > 79 characters)\n./etas/evaluation.py:298:1: W293 blank line contains whitespace\n./etas/evaluation.py:300:9: E303 too many blank lines (2)\n./etas/evaluation.py:300:9: E266 too many leading '#' for block comment\n./etas/evaluation.py:304:36: E226 missing whitespace around arithmetic operator\n./etas/evaluation.py:304:76: E226 missing whitespace around arithmetic operator\n./etas/evaluation.py:304:80: E501 line too long (117 > 79 characters)\n./etas/evaluation.py:304:110: E226 missing whitespace around arithmetic operator\n./etas/evaluation.py:306:80: E501 line too long (98 > 79 characters)\n./etas/evaluation.py:307:13: E128 continuation line under-indented for visual indent\n./etas/evaluation.py:307:14: E225 missing whitespace around operator\n./etas/evaluation.py:307:80: E501 line too long (81 > 79 characters)\n./etas/evaluation.py:308:13: E128 continuation line under-indented for visual indent\n./etas/evaluation.py:308:14: E225 missing whitespace around operator\n./etas/evaluation.py:308:80: E501 line too long (141 > 79 characters)\n./etas/evaluation.py:308:89: E226 missing whitespace around arithmetic operator\n./etas/evaluation.py:310:46: E225 missing whitespace around operator\n./etas/evaluation.py:312:53: E221 multiple spaces before operator\n./etas/evaluation.py:312:79: E231 missing whitespace after ','\n./etas/evaluation.py:312:80: E501 line too long (123 > 79 characters)\n./etas/evaluation.py:312:103: E226 missing whitespace around arithmetic operator\n./etas/evaluation.py:317:5: E303 too many blank lines (2)\n./etas/evaluation.py:317:21: E261 at least two spaces before inline comment\n./etas/evaluation.py:317:22: E262 inline comment should start with '# '\n./etas/evaluation.py:325:75: E226 missing whitespace around arithmetic operator\n./etas/evaluation.py:325:80: E501 line too long (91 > 79 characters)\n./etas/evaluation.py:326:17: E128 continuation line under-indented for visual indent\n./etas/evaluation.py:326:46: E231 missing whitespace after ','\n./etas/evaluation.py:326:60: E231 missing whitespace after ','\n./etas/evaluation.py:329:35: E226 missing whitespace around arithmetic operator\n./etas/evaluation.py:331:80: E501 line too long (128 > 79 characters)\n./etas/evaluation.py:336:5: E303 too many blank lines (2)\n./etas/evaluation.py:336:26: E261 at least two spaces before inline comment\n./etas/evaluation.py:336:27: E262 inline comment should start with '# '\n./etas/evaluation.py:342:38: E226 missing whitespace around arithmetic operator\n./etas/evaluation.py:345:17: E128 continuation line under-indented for visual indent\n./etas/evaluation.py:345:18: E225 missing whitespace around operator\n./etas/evaluation.py:346:17: E128 continuation line under-indented for visual indent\n./etas/evaluation.py:346:18: E225 missing whitespace around operator\n./etas/evaluation.py:346:55: E226 missing whitespace around arithmetic operator\n./etas/evaluation.py:348:35: E226 missing whitespace around arithmetic operator\n./etas/evaluation.py:350:80: E501 line too long (128 > 79 characters)\n./etas/evaluation.py:355:5: E303 too many blank lines (2)\n./etas/evaluation.py:357:77: E226 missing whitespace around arithmetic operator\n./etas/evaluation.py:357:80: E501 line too long (109 > 79 characters)\n./etas/evaluation.py:358:80: E501 line too long (149 > 79 characters)\n./etas/evaluation.py:360:61: E226 missing whitespace around arithmetic operator\n./etas/evaluation.py:360:74: E225 missing whitespace around operator\n./etas/evaluation.py:360:80: E501 line too long (101 > 79 characters)\n./etas/evaluation.py:366:76: E226 missing whitespace around arithmetic operator\n./etas/evaluation.py:366:80: E501 line too long (107 > 79 characters)\n./etas/evaluation.py:367:80: E501 line too long (147 > 79 characters)\n./etas/evaluation.py:369:37: E226 missing whitespace around arithmetic operator\n./etas/evaluation.py:369:53: E226 missing whitespace around arithmetic operator\n./etas/evaluation.py:369:80: E501 line too long (139 > 79 characters)\n./etas/evaluation.py:369:80: E226 missing whitespace around arithmetic operator\n./etas/evaluation.py:370:50: E226 missing whitespace around arithmetic operator\n./etas/evaluation.py:370:73: E226 missing whitespace around arithmetic operator\n./etas/evaluation.py:370:80: E501 line too long (149 > 79 characters)\n./etas/evaluation.py:370:89: E226 missing whitespace around arithmetic operator\n./etas/evaluation.py:370:116: E226 missing whitespace around arithmetic operator\n./etas/evaluation.py:371:45: E226 missing whitespace around arithmetic operator\n./etas/evaluation.py:374:9: E122 continuation line missing indentation or outdented\n./etas/evaluation.py:374:14: E231 missing whitespace after ':'\n./etas/evaluation.py:375:9: E122 continuation line missing indentation or outdented\n./etas/evaluation.py:375:14: E231 missing whitespace after ':'\n./etas/evaluation.py:376:9: E122 continuation line missing indentation or outdented\n./etas/evaluation.py:376:14: E231 missing whitespace after ':'\n./etas/evaluation.py:380:47: E231 missing whitespace after ','\n./etas/evaluation.py:380:80: E501 line too long (134 > 79 characters)\n./etas/evaluation.py:380:109: E231 missing whitespace after ','\n./etas/evaluation.py:389:16: E225 missing whitespace around operator\n./etas/evaluation.py:396:27: E225 missing whitespace around operator\n./etas/evaluation.py:396:36: E226 missing whitespace around arithmetic operator\n./etas/evaluation.py:396:46: E225 missing whitespace around operator\n./etas/evaluation.py:397:1: W293 blank line contains whitespace\n./etas/evaluation.py:398:23: E231 missing whitespace after ','\n./etas/evaluation.py:398:33: E202 whitespace before ')'\n./etas/evaluation.py:401:9: E122 continuation line missing indentation or outdented\n./etas/evaluation.py:401:14: E231 missing whitespace after ':'\n./etas/evaluation.py:402:9: E122 continuation line missing indentation or outdented\n./etas/evaluation.py:402:14: E231 missing whitespace after ':'\n./etas/evaluation.py:403:9: E122 continuation line missing indentation or outdented\n./etas/evaluation.py:403:14: E231 missing whitespace after ':'\n./etas/evaluation.py:407:39: E231 missing whitespace after ','\n./etas/evaluation.py:407:80: E501 line too long (110 > 79 characters)\n./etas/evaluation.py:407:85: E231 missing whitespace after ','\n./etas/evaluation.py:413:5: E303 too many blank lines (3)\n./etas/evaluation.py:415:25: F821 undefined name 'os'\n./etas/evaluation.py:433:9: E122 continuation line missing indentation or outdented\n./etas/evaluation.py:434:9: E122 continuation line missing indentation or outdented\n./etas/simulation.py:68:9: E731 do not assign a lambda expression, use a def\n./etas/simulation.py:122:80: E501 line too long (83 > 79 characters)\n./etas/simulation.py:127:80: E501 line too long (83 > 79 characters)\n./etas/simulation.py:136:80: E501 line too long (82 > 79 characters)\n./etas/simulation.py:173:80: E501 line too long (81 > 79 characters)\n./etas/simulation.py:185:80: E501 line too long (84 > 79 characters)\n./etas/simulation.py:237:80: E501 line too long (83 > 79 characters)\n./etas/simulation.py:317:80: E501 line too long (85 > 79 characters)\n./etas/simulation.py:322:80: E501 line too long (82 > 79 characters)\n./etas/simulation.py:325:80: E501 line too long (88 > 79 characters)\n./etas/simulation.py:326:80: E501 line too long (88 > 79 characters)\n./etas/simulation.py:328:80: E501 line too long (87 > 79 characters)\n./etas/simulation.py:329:80: E501 line too long (87 > 79 characters)\n./etas/simulation.py:384:80: E501 line too long (85 > 79 characters)\n./etas/simulation.py:389:80: E501 line too long (87 > 79 characters)\n./etas/simulation.py:394:80: E501 line too long (81 > 79 characters)\n./etas/simulation.py:405:80: E501 line too long (82 > 79 characters)\n./etas/simulation.py:406:80: E501 line too long (83 > 79 characters)\n./etas/simulation.py:409:80: E501 line too long (81 > 79 characters)\n./etas/simulation.py:431:80: E501 line too long (82 > 79 characters)\n./etas/simulation.py:432:80: E501 line too long (83 > 79 characters)\n./etas/simulation.py:435:80: E501 line too long (85 > 79 characters)\n./etas/simulation.py:474:80: E501 line too long (87 > 79 characters)\n./etas/simulation.py:553:80: E501 line too long (81 > 79 characters)\n./etas/simulation.py:579:5: F841 local variable 'as_cols' is assigned to but never used\n./etas/simulation.py:583:80: E501 line too long (85 > 79 characters)\n./etas/simulation.py:613:80: E501 line too long (81 > 79 characters)\n./etas/simulation.py:753:80: E501 line too long (81 > 79 characters)\n./etas/simulation.py:774:80: E501 line too long (83 > 79 characters)\n./etas/simulation.py:776:80: E501 line too long (82 > 79 characters)\n./etas/simulation.py:782:80: E501 line too long (81 > 79 characters)\n./etas/simulation.py:949:80: E501 line too long (87 > 79 characters)\n./etas/simulation.py:964:80: E501 line too long (80 > 79 characters)\n./etas/simulation.py:994:80: E501 line too long (82 > 79 characters)\n./etas/simulation.py:999:80: E501 line too long (85 > 79 characters)\n./etas/simulation.py:1126:80: E501 line too long (87 > 79 characters)\n./etas/simulation.py:1166:80: E501 line too long (83 > 79 characters)\n./etas/simulation.py:1193:80: E501 line too long (84 > 79 characters)\n./etas/simulation.py:1207:80: E501 line too long (80 > 79 characters)\n./etas/simulation.py:1221:80: E501 line too long (83 > 79 characters)\n./etas/simulation.py:1268:80: E501 line too long (83 > 79 characters)\n./etas/simulation.py:1274:80: E501 line too long (81 > 79 characters)\n./etas/simulation.py:1286:80: E501 line too long (80 > 79 characters)\n./etas/oef/entrypoint.py:1:1: F401 'json' imported but unused",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/etas.assess.sqaaas/job/dtgeo%25252Fv1.0.0/1/execution/node/88/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/etas.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": "./runnable_code/predict_etas.py:3:1: F401 'sys' imported but unused\n./runnable_code/predict_etas.py:15:44: E226 missing whitespace around arithmetic operator\n./runnable_code/predict_etas.py:22:61: W292 no newline at end of file\n./runnable_code/invert_etas.py:86:72: W291 trailing whitespace\n./runnable_code/invert_etas.py:88:68: W291 trailing whitespace\n./etas/plots.py:298:19: E999 SyntaxError: invalid syntax\n./etas/mc_b_est.py:45:24: E124 closing bracket does not match visual indentation\n./etas/inversion.py:175:80: E501 line too long (81 > 79 characters)\n./etas/inversion.py:497:80: E501 line too long (80 > 79 characters)\n./etas/inversion.py:514:80: E501 line too long (88 > 79 characters)\n./etas/inversion.py:610:80: E501 line too long (80 > 79 characters)\n./etas/inversion.py:773:9: E722 do not use bare 'except'\n./etas/inversion.py:787:80: E501 line too long (80 > 79 characters)\n./etas/inversion.py:988:80: E501 line too long (84 > 79 characters)\n./etas/inversion.py:1041:17: E704 multiple statements on one line (def)\n./etas/inversion.py:1086:80: E501 line too long (87 > 79 characters)\n./etas/inversion.py:1138:13: E722 do not use bare 'except'\n./etas/inversion.py:1229:80: E501 line too long (81 > 79 characters)\n./etas/inversion.py:1284:80: E501 line too long (88 > 79 characters)\n./etas/inversion.py:1396:80: E501 line too long (82 > 79 characters)\n./etas/inversion.py:1492:80: E501 line too long (84 > 79 characters)\n./etas/inversion.py:1519:80: E501 line too long (88 > 79 characters)\n./etas/inversion.py:1542:80: E501 line too long (82 > 79 characters)\n./etas/inversion.py:1568:80: E501 line too long (81 > 79 characters)\n./etas/inversion.py:1572:80: E501 line too long (82 > 79 characters)\n./etas/inversion.py:1643:80: E501 line too long (82 > 79 characters)\n./etas/inversion.py:1732:80: E501 line too long (80 > 79 characters)\n./etas/evaluation.py:1:1: F401 'sys' imported but unused\n./etas/evaluation.py:2:80: E501 line too long (135 > 79 characters)\n./etas/evaluation.py:10:1: F401 'scipy.special.expi' imported but unused\n./etas/evaluation.py:12:21: E272 multiple spaces before keyword\n./etas/evaluation.py:13:1: F811 redefinition of unused 'Polygon' from line 6\n./etas/evaluation.py:13:1: F401 'shapely.geometry.Point' imported but unused\n./etas/evaluation.py:13:1: F401 'shapely.geometry.LineString' imported but unused\n./etas/evaluation.py:14:1: F401 'matplotlib.pyplot as plt' imported but unused\n./etas/evaluation.py:17:34: E231 missing whitespace after ','\n./etas/evaluation.py:17:55: E231 missing whitespace after ','\n./etas/evaluation.py:17:77: E231 missing whitespace after ','\n./etas/evaluation.py:17:80: E501 line too long (100 > 79 characters)\n./etas/evaluation.py:20:17: E126 continuation line over-indented for hanging indent\n./etas/evaluation.py:27:13: E126 continuation line over-indented for hanging indent\n./etas/evaluation.py:29:1: E302 expected 2 blank lines, found 1\n./etas/evaluation.py:34:1: E303 too many blank lines (3)\n./etas/evaluation.py:63:80: E501 line too long (115 > 79 characters)\n./etas/evaluation.py:105:1: W293 blank line contains whitespace\n./etas/evaluation.py:115:9: E122 continuation line missing indentation or outdented\n./etas/evaluation.py:116:9: E122 continuation line missing indentation or outdented\n./etas/evaluation.py:117:9: E122 continuation line missing indentation or outdented\n./etas/evaluation.py:118:9: E122 continuation line missing indentation or outdented\n./etas/evaluation.py:119:9: E122 continuation line missing indentation or outdented\n./etas/evaluation.py:120:9: E122 continuation line missing indentation or outdented\n./etas/evaluation.py:121:9: E122 continuation line missing indentation or outdented\n./etas/evaluation.py:122:9: E122 continuation line missing indentation or outdented\n./etas/evaluation.py:123:9: E122 continuation line missing indentation or outdented\n./etas/evaluation.py:124:9: E122 continuation line missing indentation or outdented\n./etas/evaluation.py:135:21: E231 missing whitespace after ','\n./etas/evaluation.py:147:9: E303 too many blank lines (2)\n./etas/evaluation.py:160:80: E501 line too long (164 > 79 characters)\n./etas/evaluation.py:214:80: E501 line too long (81 > 79 characters)\n./etas/evaluation.py:222:80: E501 line too long (80 > 79 characters)\n./etas/evaluation.py:238:80: E501 line too long (103 > 79 characters)\n./etas/evaluation.py:244:80: E501 line too long (97 > 79 characters)\n./etas/evaluation.py:247:80: E501 line too long (86 > 79 characters)\n./etas/evaluation.py:250:21: E226 missing whitespace around arithmetic operator\n./etas/evaluation.py:253:5: E303 too many blank lines (2)\n./etas/evaluation.py:256:25: E231 missing whitespace after ','\n./etas/evaluation.py:257:57: E226 missing whitespace around arithmetic operator\n./etas/evaluation.py:263:5: E303 too many blank lines (2)\n./etas/evaluation.py:266:80: E501 line too long (93 > 79 characters)\n./etas/evaluation.py:273:38: E231 missing whitespace after ','\n./etas/evaluation.py:280:1: W293 blank line contains whitespace\n./etas/evaluation.py:281:5: E303 too many blank lines (3)\n./etas/evaluation.py:281:22: E261 at least two spaces before inline comment\n./etas/evaluation.py:281:23: E262 inline comment should start with '# '\n./etas/evaluation.py:281:80: E501 line too long (107 > 79 characters)\n./etas/evaluation.py:287:40: E226 missing whitespace around arithmetic operator\n./etas/evaluation.py:287:63: E226 missing whitespace around arithmetic operator\n./etas/evaluation.py:287:80: E501 line too long (104 > 79 characters)\n./etas/evaluation.py:287:97: E226 missing whitespace around arithmetic operator\n./etas/evaluation.py:290:13: E128 continuation line under-indented for visual indent\n./etas/evaluation.py:290:14: E225 missing whitespace around operator\n./etas/evaluation.py:291:13: E128 continuation line under-indented for visual indent\n./etas/evaluation.py:291:14: E225 missing whitespace around operator\n./etas/evaluation.py:291:61: E226 missing whitespace around arithmetic operator\n./etas/evaluation.py:291:80: E501 line too long (85 > 79 characters)\n./etas/evaluation.py:294:13: E303 too many blank lines (2)\n./etas/evaluation.py:294:35: E226 missing whitespace around arithmetic operator\n./etas/evaluation.py:296:22: W291 trailing whitespace\n./etas/evaluation.py:297:80: E501 line too long (117 > 79 characters)\n./etas/evaluation.py:298:1: W293 blank line contains whitespace\n./etas/evaluation.py:300:9: E303 too many blank lines (2)\n./etas/evaluation.py:300:9: E266 too many leading '#' for block comment\n./etas/evaluation.py:304:36: E226 missing whitespace around arithmetic operator\n./etas/evaluation.py:304:76: E226 missing whitespace around arithmetic operator\n./etas/evaluation.py:304:80: E501 line too long (117 > 79 characters)\n./etas/evaluation.py:304:110: E226 missing whitespace around arithmetic operator\n./etas/evaluation.py:306:80: E501 line too long (98 > 79 characters)\n./etas/evaluation.py:307:13: E128 continuation line under-indented for visual indent\n./etas/evaluation.py:307:14: E225 missing whitespace around operator\n./etas/evaluation.py:307:80: E501 line too long (81 > 79 characters)\n./etas/evaluation.py:308:13: E128 continuation line under-indented for visual indent\n./etas/evaluation.py:308:14: E225 missing whitespace around operator\n./etas/evaluation.py:308:80: E501 line too long (141 > 79 characters)\n./etas/evaluation.py:308:89: E226 missing whitespace around arithmetic operator\n./etas/evaluation.py:310:46: E225 missing whitespace around operator\n./etas/evaluation.py:312:53: E221 multiple spaces before operator\n./etas/evaluation.py:312:79: E231 missing whitespace after ','\n./etas/evaluation.py:312:80: E501 line too long (123 > 79 characters)\n./etas/evaluation.py:312:103: E226 missing whitespace around arithmetic operator\n./etas/evaluation.py:317:5: E303 too many blank lines (2)\n./etas/evaluation.py:317:21: E261 at least two spaces before inline comment\n./etas/evaluation.py:317:22: E262 inline comment should start with '# '\n./etas/evaluation.py:325:75: E226 missing whitespace around arithmetic operator\n./etas/evaluation.py:325:80: E501 line too long (91 > 79 characters)\n./etas/evaluation.py:326:17: E128 continuation line under-indented for visual indent\n./etas/evaluation.py:326:46: E231 missing whitespace after ','\n./etas/evaluation.py:326:60: E231 missing whitespace after ','\n./etas/evaluation.py:329:35: E226 missing whitespace around arithmetic operator\n./etas/evaluation.py:331:80: E501 line too long (128 > 79 characters)\n./etas/evaluation.py:336:5: E303 too many blank lines (2)\n./etas/evaluation.py:336:26: E261 at least two spaces before inline comment\n./etas/evaluation.py:336:27: E262 inline comment should start with '# '\n./etas/evaluation.py:342:38: E226 missing whitespace around arithmetic operator\n./etas/evaluation.py:345:17: E128 continuation line under-indented for visual indent\n./etas/evaluation.py:345:18: E225 missing whitespace around operator\n./etas/evaluation.py:346:17: E128 continuation line under-indented for visual indent\n./etas/evaluation.py:346:18: E225 missing whitespace around operator\n./etas/evaluation.py:346:55: E226 missing whitespace around arithmetic operator\n./etas/evaluation.py:348:35: E226 missing whitespace around arithmetic operator\n./etas/evaluation.py:350:80: E501 line too long (128 > 79 characters)\n./etas/evaluation.py:355:5: E303 too many blank lines (2)\n./etas/evaluation.py:357:77: E226 missing whitespace around arithmetic operator\n./etas/evaluation.py:357:80: E501 line too long (109 > 79 characters)\n./etas/evaluation.py:358:80: E501 line too long (149 > 79 characters)\n./etas/evaluation.py:360:61: E226 missing whitespace around arithmetic operator\n./etas/evaluation.py:360:74: E225 missing whitespace around operator\n./etas/evaluation.py:360:80: E501 line too long (101 > 79 characters)\n./etas/evaluation.py:366:76: E226 missing whitespace around arithmetic operator\n./etas/evaluation.py:366:80: E501 line too long (107 > 79 characters)\n./etas/evaluation.py:367:80: E501 line too long (147 > 79 characters)\n./etas/evaluation.py:369:37: E226 missing whitespace around arithmetic operator\n./etas/evaluation.py:369:53: E226 missing whitespace around arithmetic operator\n./etas/evaluation.py:369:80: E501 line too long (139 > 79 characters)\n./etas/evaluation.py:369:80: E226 missing whitespace around arithmetic operator\n./etas/evaluation.py:370:50: E226 missing whitespace around arithmetic operator\n./etas/evaluation.py:370:73: E226 missing whitespace around arithmetic operator\n./etas/evaluation.py:370:80: E501 line too long (149 > 79 characters)\n./etas/evaluation.py:370:89: E226 missing whitespace around arithmetic operator\n./etas/evaluation.py:370:116: E226 missing whitespace around arithmetic operator\n./etas/evaluation.py:371:45: E226 missing whitespace around arithmetic operator\n./etas/evaluation.py:374:9: E122 continuation line missing indentation or outdented\n./etas/evaluation.py:374:14: E231 missing whitespace after ':'\n./etas/evaluation.py:375:9: E122 continuation line missing indentation or outdented\n./etas/evaluation.py:375:14: E231 missing whitespace after ':'\n./etas/evaluation.py:376:9: E122 continuation line missing indentation or outdented\n./etas/evaluation.py:376:14: E231 missing whitespace after ':'\n./etas/evaluation.py:380:47: E231 missing whitespace after ','\n./etas/evaluation.py:380:80: E501 line too long (134 > 79 characters)\n./etas/evaluation.py:380:109: E231 missing whitespace after ','\n./etas/evaluation.py:389:16: E225 missing whitespace around operator\n./etas/evaluation.py:396:27: E225 missing whitespace around operator\n./etas/evaluation.py:396:36: E226 missing whitespace around arithmetic operator\n./etas/evaluation.py:396:46: E225 missing whitespace around operator\n./etas/evaluation.py:397:1: W293 blank line contains whitespace\n./etas/evaluation.py:398:23: E231 missing whitespace after ','\n./etas/evaluation.py:398:33: E202 whitespace before ')'\n./etas/evaluation.py:401:9: E122 continuation line missing indentation or outdented\n./etas/evaluation.py:401:14: E231 missing whitespace after ':'\n./etas/evaluation.py:402:9: E122 continuation line missing indentation or outdented\n./etas/evaluation.py:402:14: E231 missing whitespace after ':'\n./etas/evaluation.py:403:9: E122 continuation line missing indentation or outdented\n./etas/evaluation.py:403:14: E231 missing whitespace after ':'\n./etas/evaluation.py:407:39: E231 missing whitespace after ','\n./etas/evaluation.py:407:80: E501 line too long (110 > 79 characters)\n./etas/evaluation.py:407:85: E231 missing whitespace after ','\n./etas/evaluation.py:413:5: E303 too many blank lines (3)\n./etas/evaluation.py:415:25: F821 undefined name 'os'\n./etas/evaluation.py:433:9: E122 continuation line missing indentation or outdented\n./etas/evaluation.py:434:9: E122 continuation line missing indentation or outdented\n./etas/simulation.py:68:9: E731 do not assign a lambda expression, use a def\n./etas/simulation.py:122:80: E501 line too long (83 > 79 characters)\n./etas/simulation.py:127:80: E501 line too long (83 > 79 characters)\n./etas/simulation.py:136:80: E501 line too long (82 > 79 characters)\n./etas/simulation.py:173:80: E501 line too long (81 > 79 characters)\n./etas/simulation.py:185:80: E501 line too long (84 > 79 characters)\n./etas/simulation.py:237:80: E501 line too long (83 > 79 characters)\n./etas/simulation.py:317:80: E501 line too long (85 > 79 characters)\n./etas/simulation.py:322:80: E501 line too long (82 > 79 characters)\n./etas/simulation.py:325:80: E501 line too long (88 > 79 characters)\n./etas/simulation.py:326:80: E501 line too long (88 > 79 characters)\n./etas/simulation.py:328:80: E501 line too long (87 > 79 characters)\n./etas/simulation.py:329:80: E501 line too long (87 > 79 characters)\n./etas/simulation.py:384:80: E501 line too long (85 > 79 characters)\n./etas/simulation.py:389:80: E501 line too long (87 > 79 characters)\n./etas/simulation.py:394:80: E501 line too long (81 > 79 characters)\n./etas/simulation.py:405:80: E501 line too long (82 > 79 characters)\n./etas/simulation.py:406:80: E501 line too long (83 > 79 characters)\n./etas/simulation.py:409:80: E501 line too long (81 > 79 characters)\n./etas/simulation.py:431:80: E501 line too long (82 > 79 characters)\n./etas/simulation.py:432:80: E501 line too long (83 > 79 characters)\n./etas/simulation.py:435:80: E501 line too long (85 > 79 characters)\n./etas/simulation.py:474:80: E501 line too long (87 > 79 characters)\n./etas/simulation.py:553:80: E501 line too long (81 > 79 characters)\n./etas/simulation.py:579:5: F841 local variable 'as_cols' is assigned to but never used\n./etas/simulation.py:583:80: E501 line too long (85 > 79 characters)\n./etas/simulation.py:613:80: E501 line too long (81 > 79 characters)\n./etas/simulation.py:753:80: E501 line too long (81 > 79 characters)\n./etas/simulation.py:774:80: E501 line too long (83 > 79 characters)\n./etas/simulation.py:776:80: E501 line too long (82 > 79 characters)\n./etas/simulation.py:782:80: E501 line too long (81 > 79 characters)\n./etas/simulation.py:949:80: E501 line too long (87 > 79 characters)\n./etas/simulation.py:964:80: E501 line too long (80 > 79 characters)\n./etas/simulation.py:994:80: E501 line too long (82 > 79 characters)\n./etas/simulation.py:999:80: E501 line too long (85 > 79 characters)\n./etas/simulation.py:1126:80: E501 line too long (87 > 79 characters)\n./etas/simulation.py:1166:80: E501 line too long (83 > 79 characters)\n./etas/simulation.py:1193:80: E501 line too long (84 > 79 characters)\n./etas/simulation.py:1207:80: E501 line too long (80 > 79 characters)\n./etas/simulation.py:1221:80: E501 line too long (83 > 79 characters)\n./etas/simulation.py:1268:80: E501 line too long (83 > 79 characters)\n./etas/simulation.py:1274:80: E501 line too long (81 > 79 characters)\n./etas/simulation.py:1286:80: E501 line too long (80 > 79 characters)\n./etas/oef/entrypoint.py:1:1: F401 'json' imported but unused"
+                        },
+                        {
+                            "valid": true,
+                            "message": "JSON files are compliant with jsonlint standard",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-jenkins_exit_status",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "jsonlint",
+                                "lang": "JSON",
+                                "version": "1.6.3",
+                                "docker": {
+                                    "dockerfile": "QC.Sty/jsonlint/Dockerfile",
+                                    "reviewed": "2021-11-23"
+                                },
+                                "ci": {
+                                    "name": "QC.Sty github.com/swiss-seismological-service/etas jsonlint",
+                                    "status": "SUCCESS",
+                                    "stdout_command": [
+                                        "jsonlint-cli \"**/*.json\""
+                                    ],
+                                    "stdout_text": "",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/etas.assess.sqaaas/job/dtgeo%25252Fv1.0.0/1/execution/node/97/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/etas.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": {}
+                        }
+                    ],
+                    "valid": false,
+                    "required_for_next_level_badge": false
+                }
+            },
+            "coverage": {
+                "percentage": 0,
+                "total_subcriteria": 1,
+                "success_subcriteria": 0
+            }
+        },
+        "QC.Uni": {
+            "valid": false,
+            "subcriteria": {
+                "QC.Uni01": {
+                    "description": "Are the tests passing through an automated means?",
+                    "requirement_level": "MUST",
+                    "hint": "Please check & solve the failing test cases found by the {tool_name} tool",
+                    "evidence": [
+                        {
+                            "valid": false,
+                            "message": "Test cases are not passing using None testing framework",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-jenkins_exit_status",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "pytest",
+                                "lang": "Python",
+                                "version": "7.1.3",
+                                "docker": {
+                                    "image": "eoscsynergy/sqaaas-pytest:7.1.3-alpha",
+                                    "reviewed": "2023-08-09"
+                                },
+                                "ci": {
+                                    "name": "QC.Uni github.com/swiss-seismological-service/etas pytest",
+                                    "status": "FAILED",
+                                    "stdout_command": [
+                                        "pytest  --json-report  --json-report-indent 4"
+                                    ],
+                                    "stdout_text": "============================= test session starts ==============================\nplatform linux -- Python 3.9.17, pytest-7.1.3, pluggy-1.2.0\nrootdir: /sqaaas-build/github.com/swiss-seismological-service/etas\nplugins: metadata-3.0.0, json-report-1.5.0\ncollected 0 items\n\n--------------------------------- JSON report ----------------------------------\nreport saved to: .report.json\n============================ no tests ran in 0.03s =============================",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/etas.assess.sqaaas/job/dtgeo%25252Fv1.0.0/1/execution/node/106/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/etas.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": {}
+                        }
+                    ],
+                    "valid": false,
+                    "required_for_next_level_badge": false
+                }
+            },
+            "coverage": {
+                "percentage": 0,
+                "total_subcriteria": 1,
+                "success_subcriteria": 0
+            }
+        },
+        "QC.Ver": {
+            "valid": true,
+            "subcriteria": {
+                "QC.Ver01.0": {
+                    "description": "Are tags being used for releasing software",
+                    "requirement_level": "MUST",
+                    "hint": "Git tags are a convenient way to release software. This subcriterion checks if any git tag is present in the code history. More info on it-scm.com/book/en/v2/Git-Basics-Tagging\" target=\"_blank\">git tagging</a>",
+                    "evidence": [
+                        {
+                            "valid": true,
+                            "message": "The code repository uses tags for releasing new software versions",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-is_semver",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "get_git_tags.py",
+                                "lang": "Semantic Versioning",
+                                "version": "latest",
+                                "docker": {
+                                    "dockerfile": "QC.Ver/Dockerfile",
+                                    "reviewed": "2022-05-10"
+                                },
+                                "ci": {
+                                    "name": "QC.Ver github.com/swiss-seismological-service/etas get_git_tags.py",
+                                    "status": "SUCCESS",
+                                    "stdout_command": [
+                                        "get_git_tags.py"
+                                    ],
+                                    "stdout_text": "['3.0', '2.1', '2.0', '1.0']",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/etas.assess.sqaaas/job/dtgeo%25252Fv1.0.0/1/execution/node/115/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/etas.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": [
+                                "3.0",
+                                "2.1",
+                                "2.0",
+                                "1.0"
+                            ]
+                        }
+                    ],
+                    "valid": true
+                },
+                "QC.Ver01": {
+                    "description": "Is the latest release compliant with Semantic Versioning (SemVer) specification?",
+                    "requirement_level": "SHOULD",
+                    "hint": "Latest tag must be compliant with <a href=\"https://semver.org\" target=\"_blank\">SemVer specification</a>",
+                    "evidence": [
+                        {
+                            "valid": false,
+                            "message": "Latest release tag 3.0 found, but is not SemVer compliant",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-is_semver",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "get_git_tags.py",
+                                "lang": "Semantic Versioning",
+                                "version": "latest",
+                                "docker": {
+                                    "dockerfile": "QC.Ver/Dockerfile",
+                                    "reviewed": "2022-05-10"
+                                },
+                                "ci": {
+                                    "name": "QC.Ver github.com/swiss-seismological-service/etas get_git_tags.py",
+                                    "status": "SUCCESS",
+                                    "stdout_command": [
+                                        "get_git_tags.py"
+                                    ],
+                                    "stdout_text": "['3.0', '2.1', '2.0', '1.0']",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/etas.assess.sqaaas/job/dtgeo%25252Fv1.0.0/1/execution/node/115/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/etas.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": [
+                                "3.0",
+                                "2.1",
+                                "2.0",
+                                "1.0"
+                            ]
+                        }
+                    ],
+                    "valid": false,
+                    "required_for_next_level_badge": false
+                },
+                "QC.Ver02": {
+                    "description": "Are all release tags with Semantic Versioning (SemVer) specification?",
+                    "requirement_level": "SHOULD",
+                    "hint": "Existent release tags shall be <a href=\"https://semver.org\" target=\"_blank\">SemVer</a> compliant for this subcriterion to be successful",
+                    "evidence": [
+                        {
+                            "valid": false,
+                            "message": "Not all release tags are SemVer compliant",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-is_semver",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "get_git_tags.py",
+                                "lang": "Semantic Versioning",
+                                "version": "latest",
+                                "docker": {
+                                    "dockerfile": "QC.Ver/Dockerfile",
+                                    "reviewed": "2022-05-10"
+                                },
+                                "ci": {
+                                    "name": "QC.Ver github.com/swiss-seismological-service/etas get_git_tags.py",
+                                    "status": "SUCCESS",
+                                    "stdout_command": [
+                                        "get_git_tags.py"
+                                    ],
+                                    "stdout_text": "['3.0', '2.1', '2.0', '1.0']",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/etas.assess.sqaaas/job/dtgeo%25252Fv1.0.0/1/execution/node/115/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/etas.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": [
+                                "3.0",
+                                "2.1",
+                                "2.0",
+                                "1.0"
+                            ]
+                        }
+                    ],
+                    "valid": false,
+                    "required_for_next_level_badge": false
+                }
+            },
+            "coverage": {
+                "percentage": 33,
+                "total_subcriteria": 3,
+                "success_subcriteria": 1
+            }
+        },
+        "QC.Met": {
+            "valid": false,
+            "subcriteria": {
+                "QC.Met01": {
+                    "description": "Is the software citable?",
+                    "valid": false,
+                    "hint": "The two formats for software citation supported by SQAaaS are: 1) <a href=\"https://codemeta.github.io/\" target=\"_blank\">CodeMeta</a> and 2) <a href=\"https://citation-file-format.github.io/\" target=\"_blank\">Citation File Format (CFF)</a>. While CodeMeta provides you with a more comprehensive description, CFF is a more lightweight, good-enough approach to software (with built-in support by GitHub) citation. Both provide tools (<a href=\"https://codemeta.github.io/codemeta-generator/\" target=\"_blank\">CodeMeta generator</a>, <a href=\"https://citation-file-format.github.io/cff-initializer-javascript/#/\" target=\"_blank\">CFFINIT</a>)to easily generate a working citation file. Once having the file, be sure to add it to the root path of your code repo.",
+                    "evidence": [
+                        {
+                            "valid": false,
+                            "message": "No matching files found for language <CodeMeta> in repository searching by extensions or filenames\nNo matching files found for language <Citation File Format> in repository searching by extensions or filenames"
+                        }
+                    ],
+                    "required_for_next_level_badge": false
+                }
+            },
+            "coverage": {
+                "percentage": 0,
+                "total_subcriteria": 1,
+                "success_subcriteria": 0
+            }
+        }
+    },
+    "badge": {
+        "software": {
+            "criteria": {
+                "bronze": {
+                    "to_fulfill": [
+                        "QC.Lic",
+                        "QC.Acc",
+                        "QC.Doc"
+                    ],
+                    "missing": [
+                        "QC.Doc"
+                    ],
+                    "fulfilled": [
+                        "QC.Lic",
+                        "QC.Acc"
+                    ]
+                },
+                "silver": {
+                    "to_fulfill": [
+                        "QC.Acc",
+                        "QC.Doc",
+                        "QC.Met",
+                        "QC.Lic",
+                        "QC.Ver"
+                    ],
+                    "missing": [
+                        "QC.Doc",
+                        "QC.Met"
+                    ],
+                    "fulfilled": [
+                        "QC.Lic",
+                        "QC.Acc",
+                        "QC.Ver"
+                    ]
+                },
+                "gold": {
+                    "to_fulfill": [
+                        "QC.Acc",
+                        "QC.Doc",
+                        "QC.Met",
+                        "QC.Sec",
+                        "QC.Lic",
+                        "QC.Sty",
+                        "QC.Uni",
+                        "QC.Ver"
+                    ],
+                    "missing": [
+                        "QC.Doc",
+                        "QC.Met",
+                        "QC.Sty",
+                        "QC.Uni"
+                    ],
+                    "fulfilled": [
+                        "QC.Sec",
+                        "QC.Lic",
+                        "QC.Acc",
+                        "QC.Ver"
+                    ]
+                }
+            },
+            "data": {}
+        }
+    }
+}
